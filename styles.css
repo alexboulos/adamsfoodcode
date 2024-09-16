@@ -26,6 +26,13 @@ header {
     color: #fff;
 }
 
+.dieu img{
+    position:fixed; 
+    z-index: 15;
+    pointer-events: none;
+}
+
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -48,7 +55,7 @@ nav {
     padding-top: 25px;
     padding-bottom: 15px;
     padding-right: 40px;
-    background-image: url("images/nav-lines-black2.png");
+    /* background-image: url("images/gradient-header-shadow.png"); */
     background-size: contain;
     background-repeat: no-repeat;
     line-height: 20px;
@@ -257,7 +264,7 @@ nav ul li a:hover {
 
 
 #about-normal li a:hover {
-    color: orange;
+    color: #ed7e2c;
 }
 
 #about-normal li .arrow:hover {
