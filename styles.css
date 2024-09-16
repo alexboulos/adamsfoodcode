@@ -6,13 +6,13 @@
 }
 
 body {
+
     font-family: "Montserrat", sans-serif;
     width: 100%;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-
 }
 
 header {
@@ -48,33 +48,20 @@ nav {
     padding-top: 25px;
     padding-bottom: 15px;
     padding-right: 40px;
-    background-image: url("images/nav-lines.png");
+    background-image: url("images/nav-lines-black2.png");
     background-size: contain;
     background-repeat: no-repeat;
     line-height: 20px;
 }
 
-nav::before {
-    
-}
 
-/* #nav-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1; 
-  } */
 
 nav ul {
     margin-top: 50px;
 }
 
 .regular {
-    padding-left: 12px;
+    padding-left: 15px;
     font-weight: 400;
     font-size: 14px;
     line-height: 10px;
@@ -135,6 +122,7 @@ footer #nav-bar {
 
 .about-first a {
     line-height: 10px;
+    text-align: left;
     /* padding-bottom: 50px; */
     /* background-color: rgba(0, 0, 0, 0.05); */
 }
@@ -215,7 +203,7 @@ nav ul li:last-child {
     display: inline-block;
     padding: 3px;
     margin-bottom: 5px;
-    margin-left: 15px;
+    margin-left: 10px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
@@ -237,13 +225,13 @@ nav ul li a {
 }
 
 nav ul li:hover {
-    color: orange;
+    color: #ed7e2c;
     /* Change text to white on hover */
     text-shadow: none;
 }
 
 nav ul li a:hover {
-    color: orange;
+    color: #ed7e2c;
     text-shadow: none;
 }
 
@@ -254,12 +242,12 @@ nav ul li a:hover {
 }
 
 #about-normal:hover .about-first a {
-    color: orange;
+    color: #ed7e2c;
     text-shadow: none;
 }
 
 #about-normal:hover i {
-    border: solid orange;
+    border: solid #ed7e2c;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
@@ -282,7 +270,7 @@ nav ul li a:hover {
 }
 
 #about-normal ul li:hover {
-    color: orange;
+    color: #ed7e2c;
 }
 
 .about-us {
@@ -473,6 +461,7 @@ nav ul li a:hover {
     background-image: url("images/backg-products.png");
     background-size: contain;
     padding-bottom: 200px;
+    overflow-x: hidden;
 }
 
 .products h2 {
@@ -489,16 +478,18 @@ nav ul li a:hover {
 }
 
 .product p {
-    font
+    margin-bottom: 2px;
 }
 
 .view-all {
     width: 170px;
+    margin-bottom: 50px;
 }
 
 .product-list {
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .product {
@@ -506,17 +497,18 @@ nav ul li a:hover {
     background-image: url("images/ellipse-gray.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 450px;
+    width: 420px;
 }
 
 .product img {
     /* padding-right: 100px; */
-    padding-top: 50px;
-    width: 500px;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    margin-right: 80px;
-    padding-right: 70px;
+    /* padding-top: 50px; */
+    width: 520px;
+    /* margin-bottom: 40px;
+    padding-bottom: 30px;*/
+    /* margin-right: 80px; */
+    padding-right: 100px; 
+
 }
 
 .product:hover {
@@ -525,11 +517,23 @@ nav ul li a:hover {
 }
 
 .product img:hover {
-    /* width: 500px; */
+    width: 580px;
     /* padding-right: -200px; */
 
 }
 
+.product img:hover + p {
+    font-weight: 800;
+}
+
+.product h3 {
+    visibility: hidden;
+    color: #ed7e2c;
+}
+
+.product img:hover ~ h3 {
+    visibility: visible;
+}
 
 /* Instagram Section */
 .instagram {
@@ -539,13 +543,29 @@ nav ul li a:hover {
 
 .instagram h2 {
     text-align: center;
+    font-size: 60px;
+
 }
 
 .instagram h3 {
     color: #ed7e2c;
     text-align: center;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.view-ig {
+    display:flex;
+    margin-left: 300px;
+}
+
+.view-ig p {
+    font-size: 24px;
+    padding-top: 15px;
+    font-weight: 600;
+    padding-left: 20px;
+
 }
 
 .instagram a {
@@ -553,10 +573,11 @@ nav ul li a:hover {
 }
 
 .instagram-grid {
+    padding-top: 50px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 0 100px;
+    margin: 0 295px;
 }
 
 
@@ -568,7 +589,7 @@ nav ul li a:hover {
     aspect-ratio: 1 / 1;
     width: auto;
     /* Width will be determined by flex-basis */
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .insta-item img {
@@ -680,7 +701,7 @@ footer{
 }
 
 .socials-background {
-    background-color: orange;
+    background-color: #ed7e2c;
     width: 50px;
     /* width of orange div */
     height: 50px;
@@ -752,23 +773,27 @@ footer{
     background-color: #00000080;
 }
 
-/* .stacked-button.catalog {
-    visibility: hidden;
-}
 
-.stacked-button.insta {
-    visibility: hidden;
-}
 
-.stacked-button.facebook {
+/* When the user hovers over the corresponding anchor, show the buttons */
+/* .socials-background.catalog:hover~.button-stack .catalog,
+.socials-background.insta:hover~.button-stack .insta,
+.socials-background.facebook:hover~.button-stack .facebook {
+    visibility:visible;
+} */
+
+/* .stacked-button  {
     visibility: hidden;
 } */
 
-/* When the user hovers over the corresponding anchor, show the buttons */
-.socials-background.catalog:hover~.button-stack .catalog,
-.socials-background.insta:hover~.button-stack .insta,
-.socials-background.facebook:hover~.button-stack .facebook {
-    visibility: hidden;
+/* .stacked-button:hover {
+    visibility: visible;
+} */
+
+
+
+.socials-background:hover ~ .stacked-button {
+    visibility: visible;
 }
 
 .about-first {
@@ -777,6 +802,145 @@ footer{
 }
 
 
-.footer2 {
+/* .footer2 {
     width: 100%;
+} */
+
+
+footer {
+    /* background-color:#1D1D1B; */
+    background-color: transparent;
+    background-image: url("images/footer-line.png");
+    background-repeat: no-repeat;
+    color: white;
+    /* padding: 20px 50px; */
+    background-size: cover;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: 1px solid gray; */
+
+}
+
+.footer-section p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin: auto;
+    width: 30%;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+footer{
+    text-align: center;
+}
+
+.footer-logo{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.footer-content {
+    background-image: url("images/nav-lines.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.footer-menu a {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.footer-menu .regular{
+    text-align: left;
+    padding: 0;
+    font-size: 16px;
+}
+
+.footer-icons {
+    margin-bottom: 30px;
+}
+
+
+.carousel {
+    width: 100%;
+    position: relative;
+}
+
+.slides {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #000;
 }
