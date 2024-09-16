@@ -45,7 +45,7 @@ header {
 
 .logo img {
     width: 250px;
-    margin-top: -110px;
+    margin-top: -170px;
 }
 
 nav {
@@ -55,7 +55,7 @@ nav {
     padding-top: 25px;
     padding-bottom: 15px;
     padding-right: 40px;
-    /* background-image: url("images/gradient-header-shadow.png"); */
+    background-image: url("images/nav-lines.png");
     background-size: contain;
     background-repeat: no-repeat;
     line-height: 20px;
@@ -142,6 +142,7 @@ footer #nav-bar {
     text-align: left;
     margin-top: -25px;
     padding-left: 10px;
+    padding-right: 10px;
     /* width: auto; */
 }
 
@@ -241,11 +242,6 @@ nav ul li a {
     /* Slight border radius for links */
 }
 
-nav ul li:hover {
-    color: #ed7e2c;
-    /* Change text to white on hover */
-    text-shadow: none;
-}
 
 nav ul li a:hover {
     color: #ed7e2c;
@@ -255,12 +251,15 @@ nav ul li a:hover {
 #about-normal:hover {
     background-color: white;
     /* border: solid white 10px; */
+    cursor: pointer;
+}
 
+#about-normall:hover {
+    cursor: pointer;
 }
 
 #about-normal:hover .about-first a {
     color: #ed7e2c;
-    text-shadow: none;
 }
 
 #about-normal:hover i {
@@ -316,11 +315,9 @@ nav ul li a:hover {
         padding-top: 15px;
         padding-bottom: 15px;
         padding-right: 40px;
-        /* border-bottom: 2px solid #e8e8e8; Subtle bottom border */
         background-image: url("images/nav-lines.png");
         background-size: contain;
         background-repeat: no-repeat;
-
     }
 
     nav ul li {
