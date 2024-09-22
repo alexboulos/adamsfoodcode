@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,30 +13,29 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    position: relative;
 }
 
 header {
     position: relative;
     height: 100vh;
-    /* Full height for both header and hero */
     background-image: url('images/woman-with-food.png');
-    /* Woman image as background */
     background-size: cover;
     background-position: center;
     color: #fff;
 }
 
-.dieu img{
+.shadow img{
     position:fixed; 
     z-index: 15;
-    pointer-events: none;
+    pointer-events:none;
 }
 
 
-.container {
+.nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-start;
     padding-left: 50px;
     position: fixed;
     z-index: 15;
@@ -44,8 +43,9 @@ header {
 }
 
 .logo img {
+    /* position: fixed; */
     width: 250px;
-    margin-top: -170px;
+    /* margin-top: 170px; */
 }
 
 nav {
@@ -54,7 +54,6 @@ nav {
     margin-left: 100px;
     padding-top: 25px;
     padding-bottom: 15px;
-    /* padding-right: 40px; */
     background-image: url("images/nav-lines.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -62,12 +61,11 @@ nav {
 }
 
 
-
 nav ul {
     margin-top: 50px;
 }
 
-.regular {
+.subtitle {
     padding-left: 15px;
     font-weight: 400;
     font-size: 14px;
@@ -78,16 +76,9 @@ nav ul {
 #nav-bar li {
     float: right;
     margin-top: -25px;
-    /* width: auto; */
+    margin-bottom: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
-    /* margin-left: 50px; */
-
-}
-
-#nav-bar {
-    text-decoration: none;
-    /* width: auto; */
+    /* padding-bottom: 20px; */
 }
 
 #nav-bar {
@@ -101,51 +92,15 @@ nav ul {
     margin-left: 30px;
 }
 
-footer #nav-bar {
-    margin: 0;
-    margin-top: 0;
-    margin-right: 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 20px;
-}
-
-@media only screen and (max-width: 2000px) {
-    #nav-bar {
-        gap: 0;
-        margin-top: -20px;
-
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    #nav-bar {
-        gap: 0;
-        margin-top: -20px;
-
-    }
-
-}
-
-
-.about-first a {
-    line-height: 10px;
-    text-align: left;
-    /* padding-bottom: 50px; */
-    /* background-color: rgba(0, 0, 0, 0.05); */
-}
 
 #about-normal {
     display: flex;
     flex-direction: column;
-    /* padding-bottom: 20px; */
     padding-top: 40px;
     text-align: left;
     margin-top: -25px;
     padding-left: 10px;
     padding-right: 10px;
-    /* width: auto; */
 }
 
 #about-normall {
@@ -155,66 +110,18 @@ footer #nav-bar {
     padding-left: 10px;
 }
 
-#about-not-normal {
-    padding-top: 40px;
-    margin-top: -25px;
-
-}
 
 #about-normal li {
-    /* color: black;  */
-    /* text-shadow: 1px 1px 2px black; */
-    /* text-decoration: none; */
-    /* font-size: 28px; */
-    /* Slightly larger font */
-    /* font-weight: bold; */
-    /* Make the text bold */
-    /* text-transform: uppercase; */
-    /* Make the text all uppercase */
-    /* border-radius: 5px; */
-    /* Slight border radius for links */
     line-height: 16px;
-    /* border-top: 1px solid gray; */
-
 }
 
-
-.about-hover a {
-    color: black;
-    text-shadow: none;
+#about-normall li {
+    line-height: 16px;
 }
 
-#about-normal .about-hover {
-    visibility: hidden;
-}
-
-.about-hover a {
-    line-height: 25px;
-    font-size: 20px;
-    display: block;
-    padding-bottom: 0;
-}
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start;
-    /* Align the links horizontally in the center */
-}
-
-nav ul li {
-    /* margin-right: 20px;  */
-    position: relative;
-    /* Needed for hover effect */
-    margin-left: 0px;
-    width: auto;
-    margin-right: 10px;
-}
-
-nav ul li:last-child {
-    margin-right: 0;
 }
 
 .arrow {
@@ -230,31 +137,37 @@ nav ul li:last-child {
 
 nav ul li a {
     color: white;
-    /* text-shadow: 1px 1px 2px black; */
-    text-decoration: none;
     font-size: 22px;
-    /* Slightly larger font */
     font-weight: bold;
-    /* Make the text bold */
-    text-transform: uppercase;
-    /* Make the text all uppercase */
     padding: 15px 15px;
-    /* Add padding inside the links */
-    border-radius: 5px;
-    /* Slight border radius for links */
 }
 
 
 nav ul li a:hover {
     color: #ed7e2c;
-    text-shadow: none;
 }
+
 
 #about-normal:hover {
     background-color: white;
-    /* border: solid white 10px; */
     cursor: pointer;
+    /* border-radius: 0 0 20px 20px; */
+    padding-bottom: 20px;
+    clip-path: polygon(
+      0 0, /* Top left */
+      100% 0, /* Top right */
+      100% 90%, /* Start curve on the right */
+      90% 95%, /* Intermediate point 1 on the right */
+      80% 97%, /* Intermediate point 2 */
+      70% 98.5%, /* Intermediate point 3 */
+      50% 100%, /* Lowest point in the center */
+      30% 98.5%, /* Intermediate point 4 */
+      20% 97%, /* Intermediate point 5 */
+      10% 95%, /* Intermediate point 6 */
+      0 90% /* End curve on the left */
+    );
 }
+
 
 #about-normall:hover {
     cursor: pointer;
@@ -292,25 +205,54 @@ nav ul li a:hover {
 }
 
 .about-us {
-    /* padding-bottom: 30px; */
     padding-bottom: 50px;
 }
 
-#about-normal:hover .about-hover {
-    visibility: visible;
+.about-hover a {
+    color: black;
+    text-shadow: none;
+    padding-top: 0;
 }
 
 .about-hover {
-    /* border-bottom: solid black 1px; */
-    /* margin-top: 90px; */
+    border-bottom: 1px solid gray;
+    padding-bottom: 0;    
 }
+
+.about-hover {
+    display: none;
+}
+
+.about-hover a {
+    line-height: 25px;
+    font-size: 20px;
+    display: block;
+    padding-bottom: 0;
+}
+
+#about-normal:hover .about-hover {
+    display: flex;
+}
+
 
 #about-normal:hover {
-    visibility: visible;
+    display: flex;
 }
 
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1800px) {
+
+    #nav-bar {
+        gap: 0;
+    }
+
+    .about-hover a {
+        font-size: 16px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
 
     nav {
         margin-left: 100px;
@@ -323,25 +265,31 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        /* padding-bottom: 56px; */
         bottom: 7px;
     }
 
     nav ul li a {
-        font-size: 12px;
-        /* padding-bottom: 8px; */
+        font-size: 16px;
 
     }
 
 }
 
+@media only screen and (max-width: 1400px) {
 
 
+    #nav-bar {
+        gap: 0;
+    }
+
+    .about-hover a{
+        font-size: 14px;
+    }
 
 
-
-@media only screen and (max-width: 1100px) {
-
+    .subtitle {
+        font-size: 12px;
+    }
 
     nav {
         margin-left: 0px;
@@ -354,19 +302,19 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        padding-bottom: 56px;
+        /* padding-bottom: 56px; */
         bottom: 17px;
-        margin-right: 20px;
+        /* margin-right: 20px; */
     }
 
     nav ul li a {
-        font-size: 12px;
-        /* padding-bottom: 8px; */
-
+        font-size: 14px;
     }
 
+    .about-first {
+        margin-bottom: 200px;
+    }
 }
-
 
 
 
@@ -378,7 +326,6 @@ nav ul li a:hover {
 
 .icon {
     background-color: #ed7e2c;
-    ;
     width: 40px;
     height: 40px;
     display: flex;
@@ -400,17 +347,11 @@ nav ul li a:hover {
     border-top: none;
 }
 
-
-
 .hero-text {
     position: absolute;
-    /* or relative if inside a flex container */
     left: 80px;
-    /* Align to the far left */
     top: 50%;
-    /* Center vertically */
     transform: translateY(-50%);
-    /* Adjust vertical centering */
     padding-left: 80px;
 }
 
@@ -430,11 +371,8 @@ nav ul li a:hover {
 .hero-text h3 {
     line-height: 1;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
-
-.hero-text a {}
-
 
 .btn {
     display: inline-block;
@@ -444,9 +382,7 @@ nav ul li a:hover {
     text-decoration: none;
     border-radius: 30px;
     font-size: 20px;
-    /* Make the font size larger */
     font-weight: bold;
-    /* Make the text bold */
 }
 
 .load-more {
@@ -478,6 +414,7 @@ nav ul li a:hover {
     background-size: contain;
     padding-bottom: 200px;
     overflow-x: hidden;
+    height: 1000px;
 }
 
 .products h2 {
@@ -517,28 +454,24 @@ nav ul li a:hover {
 }
 
 .product img {
-    /* padding-right: 100px; */
-    /* padding-top: 50px; */
     width: 520px;
-    /* margin-bottom: 40px;
-    padding-bottom: 30px;*/
-    /* margin-right: 80px; */
-    padding-right: 100px; 
-
+    padding-right: 120px; 
+    z-index: 5;
+    padding-bottom: 40px;
 }
 
 .product:hover {
     background-image: url("images/ellipse-dark.png");
-
+    z-index: 1;
+    cursor: pointer;
 }
 
-.product img:hover {
+.product:hover img {
     width: 580px;
-    /* padding-right: -200px; */
-
+    padding-right: 140px;
 }
 
-.product img:hover + p {
+.product:hover p {
     font-weight: 800;
 }
 
@@ -547,7 +480,7 @@ nav ul li a:hover {
     color: #ed7e2c;
 }
 
-.product img:hover ~ h3 {
+.product:hover h3 {
     visibility: visible;
 }
 
@@ -601,10 +534,8 @@ nav ul li a:hover {
     width: 450px;
     height: 450px;
     background-color: #ccc;
-    /* flex-basis: calc(33.33% - 10px); */
     aspect-ratio: 1 / 1;
     width: auto;
-    /* Width will be determined by flex-basis */
     margin-bottom: 5px;
 }
 
@@ -626,7 +557,6 @@ footer .logo {
 
 .footer-info {
     display: flex;
-    /* justify-content: space-between; */
     padding-bottom: 20px;
     border-bottom: 1px solid #555;
 }
@@ -654,13 +584,6 @@ footer .logo {
     padding-top: 20px;
 }
 
-/* 
-footer{
-    background-image: url("images/footer.png");
-    height: 500px;
-    width: auto;
-} */
-
 
 .love {
     width: 100%;
@@ -670,10 +593,9 @@ footer{
 .container-socials {
     position: fixed;
     right: 0px;
-    /* move container to the far right */
     top: 50%;
-    /* adjust the top spacing as needed */
     display: flex;
+    flex-direction: column;
 
 }
 
@@ -682,14 +604,11 @@ footer{
     display: flex;
     flex-direction: column;
     margin-right: 0px;
-    /* space between buttons and images */
 }
 
-.stacked-button {
+.f-button {
     width: fit-content;
-    /* button width */
     height: 50px;
-    /* button width */
     padding: 10px;
     margin-bottom: 4px;
     font-size: 16px;
@@ -697,7 +616,6 @@ footer{
 
 .stacked-button:last-child {
     margin-bottom: 0;
-    /* remove margin after the last button */
 }
 
 .image-stack {
@@ -707,7 +625,6 @@ footer{
 
 .square-img {
     width: 24px;
-    /* adjust size as needed */
     height: 24px;
     object-fit: contain;
     margin-bottom: 10px;
@@ -720,23 +637,17 @@ footer{
 .socials-background {
     background-color: #ed7e2c;
     width: 50px;
-    /* width of orange div */
     height: 50px;
-    /* height of orange div */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 4px;
-    /* space between the divs */
 }
 
 .socials-background:hover+.stacked-button {
     display: block;
 }
 
-
-
-/* You can further style the buttons if necessary */
 .stacked-buttons button {
     margin: 10px;
     padding: 10px 20px;
@@ -746,7 +657,6 @@ footer{
 .main-container {
     display: flex;
     background-color: #FFA500;
-    /* Orange background */
 }
 
 .text-section {
@@ -786,27 +696,9 @@ footer{
     text-align: center;
     width: 210px;
     height: 50px;
-    /* height of orange div */
     background-color: #00000080;
+    
 }
-
-
-
-/* When the user hovers over the corresponding anchor, show the buttons */
-/* .socials-background.catalog:hover~.button-stack .catalog,
-.socials-background.insta:hover~.button-stack .insta,
-.socials-background.facebook:hover~.button-stack .facebook {
-    visibility:visible;
-} */
-
-/* .stacked-button  {
-    visibility: hidden;
-} */
-
-/* .stacked-button:hover {
-    visibility: visible;
-} */
-
 
 
 .socials-background:hover ~ .stacked-button {
@@ -819,26 +711,17 @@ footer{
 }
 
 
-/* .footer2 {
-    width: 100%;
-} */
-
-
 footer {
-    /* background-color:#1D1D1B; */
     background-color: transparent;
     background-image: url("images/footer-line.png");
     background-repeat: no-repeat;
     color: white;
-    /* padding: 20px 50px; */
     background-size: cover;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    /* border-bottom: 1px solid gray; */
-
 }
 
 .footer-section p {
@@ -899,6 +782,7 @@ footer{
 .footer-menu a {
     font-size: 20px;
     font-weight: 800;
+    cursor: pointer;
 }
 
 .footer-menu .regular{
@@ -921,24 +805,39 @@ footer{
     width: 100%;
     overflow: hidden;
     position: relative;
+    /* background-image: url("images/love-orange-bg.png"); */
 }
 
 .slide {
     width: 100%;
-    height: 100vh;
+    height: 1000px;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("images/love-orange-bg.png");
+
 }
 
 .content {
     color: white;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    /* text-align: center; */
+    width: 60%;
+    height: 100%;
+    /* position: absolute;
+    left: 50px; */
+}
+
+.love-img {
+    position: absolute;
+
+}
+
+.content img {
+    /* max-width: 100%; */
+    /* height: 100%; */
+    position: absolute;
 }
 
 .carousel-dots {
@@ -966,5 +865,52 @@ footer{
     position: absolute;
     right: 350px;
     cursor: pointer;
+}
+
+.love-what-you {
+    background-image: url("images/love-orange-bg.png");
+    height: 800px;
+}
+
+.bring {
+    position: relative;
+    padding-top: 200px;
+    padding-left: 160px;
+
+}
+
+.bring h1 {
+    color: white;
+    font-size: 42px;
+    line-height: 50px;
+}
+
+.bring p {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.container-socials .stacked-button {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute; 
+    top: 46%; 
+    left: -210%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container-socials .button-image-stack {
+    position: relative; 
+    display: inline-block;
+}
+
+.container-socials .button-image-stack:hover .stacked-button {
+    visibility: visible;
+    opacity: 1;
 }
 
