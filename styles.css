@@ -14,15 +14,25 @@ body {
     padding: 0;
     overflow-x: hidden;
     position: relative;
+    background-color: white;
 }
 
-header {
+.index-header {
     position: relative;
     height: 100vh;
     background-image: url('images/woman-with-food.png');
     background-size: cover;
     background-position: center;
     color: #fff;
+}
+
+.about-header {
+    position: relative;
+    height: 80vh;
+    background-image: url("images/about-us-bg.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
 
 .shadow img{
@@ -76,7 +86,7 @@ nav ul {
 #nav-bar li {
     float: right;
     margin-top: -25px;
-    margin-bottom: 20px;
+    margin-bottom: 19px;
     padding-top: 20px;
     /* padding-bottom: 20px; */
 }
@@ -149,25 +159,36 @@ nav ul li a:hover {
 
 
 #about-normal:hover {
-    background-color: white;
+    /* background-color: white; */
+    /* background-image: url("images/dropdown-4.png"); */
+
     cursor: pointer;
     /* border-radius: 0 0 20px 20px; */
-    padding-bottom: 20px;
-    clip-path: polygon(
-      0 0, /* Top left */
-      100% 0, /* Top right */
-      100% 90%, /* Start curve on the right */
-      90% 95%, /* Intermediate point 1 on the right */
-      80% 97%, /* Intermediate point 2 */
-      70% 98.5%, /* Intermediate point 3 */
-      50% 100%, /* Lowest point in the center */
-      30% 98.5%, /* Intermediate point 4 */
-      20% 97%, /* Intermediate point 5 */
-      10% 95%, /* Intermediate point 6 */
-      0 90% /* End curve on the left */
-    );
+    padding-bottom: 18px;
 }
 
+.four:hover {
+    background-image: url("images/dropdown-4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.two:hover {
+    background-image: url("images/dropdown-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.three:hover {
+    background-image: url("images/dropdown-3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.move {
+    position: relative;
+    left: -10px;
+}
 
 #about-normall:hover {
     cursor: pointer;
@@ -215,8 +236,10 @@ nav ul li a:hover {
 }
 
 .about-hover {
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     padding-bottom: 0;    
+    margin-top: 20px;   
+
 }
 
 .about-hover {
@@ -227,7 +250,12 @@ nav ul li a:hover {
     line-height: 25px;
     font-size: 20px;
     display: block;
-    padding-bottom: 0;
+    padding-bottom: 0; 
+
+}
+
+.first a {
+    margin-top: 10px;  
 }
 
 #about-normal:hover .about-hover {
@@ -239,8 +267,54 @@ nav ul li a:hover {
     display: flex;
 }
 
+.about-section {
+    height: fit-content;
+    background-image: url("images/about-white-bg.png");
+}
+.about-dropdown {
+    background-image: url("images/about-dropdown.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 79vh;
+    left: 200px;
+    margin-bottom: 100px;
+    z-index: 18;
+    padding-top: 80px;
+
+}
+
+.about-dropdown li {
+    list-style: none;
+    padding-bottom: 12px;
+    margin-left: 50px;
+
+}
+
+.about-dropdown a {
+    font-size: 22px;
+    font-weight: 600;
+    position: relative;
+}
+
+.about-description {
+    margin: 50px 500px;
+    text-transform: uppercase;  
+    font-size: 12px;
+}
+
 
 @media only screen and (max-width: 1800px) {
+
+    #nav-bar li {
+        float: right;
+        margin-top: -25px;
+        margin-bottom: 14px;
+        padding-top: 20px;
+        /* padding-bottom: 20px; */
+    }
 
     #nav-bar {
         gap: 0;
@@ -253,6 +327,7 @@ nav ul li a:hover {
     .subtitle {
         font-size: 12px;
     }
+
 
     nav {
         margin-left: 100px;
@@ -412,9 +487,11 @@ nav ul li a:hover {
     padding: 100px;
     background-image: url("images/backg-products.png");
     background-size: contain;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
     overflow-x: hidden;
-    height: 1000px;
+    /* height: 800px; */
+    height: auto;
+
 }
 
 .products h2 {
@@ -443,6 +520,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .product {
@@ -450,14 +528,19 @@ nav ul li a:hover {
     background-image: url("images/ellipse-gray.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 420px;
+    width: 360px;
+    padding-bottom: 110px;
+
 }
 
 .product img {
-    width: 520px;
-    padding-right: 120px; 
+    width: 360px;
+    position: relative;
+    /* padding-right: 320px;  */
+    left: -20px;
     z-index: 5;
     padding-bottom: 40px;
+
 }
 
 .product:hover {
@@ -467,8 +550,10 @@ nav ul li a:hover {
 }
 
 .product:hover img {
-    width: 580px;
-    padding-right: 140px;
+    width: 400px;
+    left: -50px;
+    padding-bottom: 0;
+    /* padding-right: 140px; */
 }
 
 .product:hover p {
@@ -549,6 +634,7 @@ footer {
     color: #fff;
     padding: 50px;
     margin-top: 100px;
+    position: relative;
 }
 
 footer .logo {
@@ -588,6 +674,21 @@ footer .logo {
 .love {
     width: 100%;
 }
+
+/* .boxes {
+    position: fixed;
+    right: 100px;
+    top: 500px;
+    z-index: 15;
+}
+
+.box {
+    background-image: url("images/box-empty.png");
+    width: 100%;
+    height: 50px;
+    z-index: 15;
+} */
+
 
 
 .container-socials {
@@ -710,6 +811,10 @@ footer .logo {
     align-content: start;
 }
 
+.about-first a {
+    text-decoration: none;
+}
+
 
 footer {
     background-color: transparent;
@@ -785,10 +890,15 @@ footer{
     cursor: pointer;
 }
 
+.footer-menu a:hover {
+    color: #ed7e2c;
+}
+
 .footer-menu .regular{
     text-align: left;
     padding: 0;
     font-size: 16px;
+    font-weight: 400;
 }
 
 .footer-icons {
@@ -901,7 +1011,6 @@ footer{
     background-color: rgba(0, 0, 0, 0.7); 
     color: white;
     padding: 10px;
-    border-radius: 5px;
 }
 
 .container-socials .button-image-stack {

@@ -1,0 +1,13 @@
+clip-path: polygon(
+      0 0, /* Top left */
+      100% 0, /* Top right */
+      100% 90%, /* Start curve on the right */
+      90% 95%, /* Intermediate point 1 on the right */
+      80% 97%, /* Intermediate point 2 */
+      70% 98.5%, /* Intermediate point 3 */
+      50% 100%, /* Lowest point in the center */
+      30% 98.5%, /* Intermediate point 4 */
+      20% 97%, /* Intermediate point 5 */
+      10% 95%, /* Intermediate point 6 */
+      0 90% /* End curve on the left */
+    );
