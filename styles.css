@@ -16,6 +16,10 @@
     position: relative;
     background-color: white;
   }
+
+  .nekat{
+    
+  }
   
   .index-header {
     position: relative;
@@ -163,8 +167,8 @@
   
   nav {
     display: flex;
-    margin-top: 80px;
-    margin-left: 100px;
+    margin-top: 110px;
+    margin-left: 200px;
     padding-top: 25px;
     padding-bottom: 15px;
     background-image: url("images/nav-lines.png");
