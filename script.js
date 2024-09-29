@@ -10,7 +10,7 @@ const sticky = navbar.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position.
 function checkSticky() {
-  if (window.scrollY >= 200) {
+  if (window.scrollY >= 50) {
     navbar.classList.add("sticky");
     recto.classList.add("rectangle");
 
@@ -52,6 +52,24 @@ window.onscroll = function() {
 //     dots[slideIndex-1].className += " active";
 // }
 
+
+function changeImage(imageSrc) {
+    var img = document.getElementById("slidingImage");
+    
+    // Remove the sliding animation class if it's already applied
+    img.classList.remove("slide-in");
+    
+    // Change the image source
+    img.src = imageSrc;
+    
+    // Force a reflow to reset the animation (trick for restarting the animation)
+    void img.offsetWidth;
+    
+    // Re-add the sliding animation class
+    img.classList.add("slide-in");
+}
+
+
 function changeContent(dotNumber) {
     const dots = document.querySelectorAll('.dot');
     const textContainer = document.getElementById('info-text');
@@ -81,8 +99,14 @@ function changeContent(dotNumber) {
             imageContainer.src = 'images/love-pakistani.png'; // Update with the correct image path
             break;
     }
+    
 }
 // Set initial state when page loads
 document.addEventListener('DOMContentLoaded', function() {
     changeContent(1); // This activates the first dot and sets the corresponding text and image.
 });
+
+function changeAbout(about) {
+    const abouts = document.querySelectorAll('.abouts');
+
+}
