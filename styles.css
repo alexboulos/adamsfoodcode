@@ -814,6 +814,7 @@ button:hover {
     font-weight: 500;
     max-width: 58%;
     color: #555;
+    height: 400px;
   }
   
   .contact-description {
