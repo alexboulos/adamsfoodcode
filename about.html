@@ -26,16 +26,23 @@
           ><img src="images/adams-food-logo.png" alt="Adams Food Logo"
         /></a>
       </div>
-      <div id="rect" class="rect1">
-        <img src="images/menu-rect.png" />
-      </div>  
+      <div id="rect" class="rect1" >
+        <img class="small-rect" src="images/menu-rect.png">
+        <img class="big-rect" src="images/menu-rect-big.png">
+        <img class="giant-rect" src="images/menu-rect-mobile.png">
+   </div> 
       <div class="nav-container" id="navbar">
         <nav>
+          <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div> 
           <ul id="nav-bar">
             <ul id="about-normal" class="four">
               <li class="about-first one">
                 <a class="about-us active" href="about.html"
-                  >ABOUT US <i class="arrow active"></i> <br /><span class="subtitle"
+                  >ABOUT US <i class="arrow"></i> <br /><span class="subtitle"
                     >HOMEMADE STYLE</span
                   ></a
                 >
@@ -145,19 +152,19 @@
     <section class="about-section">
       <div class="about-dropdown">
         <ul>
-          <li class=""><a>OUR STORY</a></li>
-          <li class=""><a>MISSION</a></li>
-          <li class=""><a>VISION</a></li>
-          <li class="">
+          <li><a onclick="aboutDropdown(1)">OUR STORY</a></li>
+          <li><a onclick="aboutDropdown(2)">MISSION</a></li>
+          <li><a onclick="aboutDropdown(3)">VISION</a></li>
+          <li>
             <a>QUALITY <br />+ ISO 22000</a>
           </li>
         </ul>
       </div>
       <div class="about-nav">
-        <img src="images/about-nav.png" alt="" />
+        <p><b>&#11035 HOME / ABOUT US /</b> <span id="about-nav-text" class="orange"> OUR STORY</span></p>
       </div>
       <div class="about-description">
-        <p>
+        <p id="about-description-text">
           Adams Food Co. (The Real Lebanese Taste) started as a family business
           in 2010. Due to market need, pledged to create a homemade style frozen
           natural appetizers/finger food concept for consumers, prepared with
@@ -179,10 +186,14 @@
         </p>
       </div>
       <div class="about-delivering">
-        <h3>ADAMS FOOD </br> IS THE LEADER IN DELIVERING</h3>
+        <img src="images/flocon.png">
+        <h3>ADAMS FOOD</h3>
+        <h3>IS THE LEADER IN DELIVERING</h3>
         <h4>consistent frozen quality products to 5 stars hotels & restaurants 
           and all major retail supermarket chains all over Kuwait, in addition to 
           direct-to-consumer home deliveries.</h4>
+          <img class="ftayer" src="images/ftayer.png">
+          <img class="pizza" src="images/pizza.png">
       </div>
       <!-- <img class="pizza" src="images/about-bg-pizza.png" /> -->
     </section>

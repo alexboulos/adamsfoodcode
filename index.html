@@ -23,11 +23,31 @@
         <div class="logo">
             <img src="images/adams-food-logo.png" alt="Adams Food Logo">
         </div>
-       <div id="rect" class="rect1">
-            <img src="images/menu-rect.png">
+       <div id="rect" class="rect1" >
+            <img class="small-rect" src="images/menu-rect.png">
+            <img class="big-rect" src="images/menu-rect-big.png">
+            <img class="giant-rect" src="images/menu-rect-mobile.png">
        </div>
         <div class="nav-container" id="navbar">
+            <!-- <nav>
+                <div class="menu-icon" onclick="toggleMenu()">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+                <ul class="nav-links">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav> -->
             <nav>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>           
                 <ul id="nav-bar">
                     <ul id="about-normal" class="four">
                         <li class="about-first one">
@@ -113,7 +133,7 @@
     <!-- Features Section -->
     <section class="features">
         <div class="feature">
-            <img src="images/madeinkuwait.png" alt="Proudly Made in Kuwait">
+            <img class="madekuwait" src="images/madeinkuwait.png" alt="Proudly Made in Kuwait">
         </div>
         <div class="feature iso">
             <img src="images/iso.png" alt="ISO 22000 Certified">
@@ -128,7 +148,7 @@
         <!-- <img class="love-food" src="images/delicious-pakistani-food-with-sauce-high-angle-3.png"> -->
         <div class="text-section">
             <h1 id="info-text" class="fade-in">LOVE WHAT YOU <br/>BRING TO THE TABLE</h1>
-            <p class="fade-in">You’ll find all our natural products filled with <br/> nutritious goodness and ready for your family <br/> to enjoy.</p>
+            <p class="fade-in">You’ll find all our natural products filled with <br/> nutritious goodness and ready for your family to enjoy.</p>
             <div class="footer-navigation">
               <span class="dot active" onclick="changeContent(1)"></span>
               <span class="dot" onclick="changeContent(2)"></span>
@@ -236,7 +256,9 @@
             <a class="about-us">CONTACT US <br><span class="regular">GET IN TOUCH</span></a>
         </div>
         <div class="footer-icons">
-            <img src="images/footer-icons.png">
+            <img src="images/madeinkuwait-white.png">
+            <img src="images/iso-white.png">
+            <img src="images/natural-white.png">
         </div>
         <div class="footer-bottom">
             <p>© COPYRIGHT 2024. ALL RIGHTS RESERVED | DESIGNED AND DEVELOPED BY THELOOP</p>
