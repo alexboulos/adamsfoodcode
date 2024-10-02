@@ -2,7 +2,7 @@
 
 // Get the navbar element
 const navbar = document.getElementById("navbar");
-const recto = document.getElementById("rect")
+const recto = document.getElementById("rect");
 // navbar.classList.add("sticky");
 
 // Get the offset position of the navbar
