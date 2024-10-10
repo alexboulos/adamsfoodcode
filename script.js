@@ -125,8 +125,8 @@ function changeIndex(boxNumber) {
     }
 }
 
-let into = 1;
-setInterval(changeContent(into++), 5000);
+// let into = 1;
+// setInterval(changeContent(into++), 5000);
 
 
 
@@ -141,55 +141,67 @@ setInterval(changeContent(into++), 5000);
 //     }
 // }
 
-function changeContent(dotNumber) {
-    const dots = document.querySelectorAll('.dot');
-    const textContainer = document.getElementById('info-text');
-    const imageContainer = document.getElementById('main-image');
-    
-    // Update dots
-    dots.forEach((dot, index) => {
-        if (index === dotNumber - 1) {
-            dot.style.backgroundColor = 'black';
-        } else {
-            dot.style.backgroundColor = 'white';
-        }
-    });
 
-    // Update text and image based on the selected dot
-    switch (dotNumber) {
-        case 1:
-            textContainer.textContent = 'Love what you bring to the table';
-            imageContainer.src = 'images/love-pakistani.png'; // Update with the correct image path
-            break;
-        case 2:
-            textContainer.textContent = 'Bring what you love to the table';
-            imageContainer.src = 'images/love-empanadas.png'; // Update with the correct image path
-            break;
-        case 3:
-            textContainer.textContent = 'Dedicated to bringing only the best to your table.';
-            imageContainer.src = 'images/love-pakistani.png'; // Update with the correct image path
-            break;
-    }
-    var img = document.getElementById("main-image");
-    
-    // Remove the sliding animation class if it's already applied
-    img.classList.remove("love");
-    
-    // Change the image source
-    img.src = imageSrc;
-    
-    // Force a reflow to reset the animation (trick for restarting the animation)
-    void img.offsetWidth;
-    
-    // Re-add the sliding animation class
-    img.classList.add("love");
-}
+const currentImageElement = document.getElementById("love-img");
+const nextImageElement = document.getElementById("love-next-img");
+const images = ["images/love-packistani-food.png", "images/love-empanadas.png", "images/love-packistani-food.png"]; 
+let currentIndex = 0;
+
+
+// const currentImageElement = document.getElementById("currentImage");
+// const nextImageElement = document.getElementById("nextImage");
+// const images = ["image1.jpg", "image2.jpg", "image3.jpg"]; 
+// let currentIndex = 0;
+
+// document.getElementById("nextButton").addEventListener("click", function () {
+
+//   const nextIndex = (currentIndex + 1) % images.length;
+  
+
+//   nextImageElement.src = images[nextIndex];
+  
+
+//   nextImageElement.style.transform = "translateX(100%)";
+//   nextImageElement.style.display = "block"; 
+  
+
+//   setTimeout(() => {
+//     currentImageElement.style.transform = "translateX(-100%)"; 
+//     nextImageElement.style.transform = "translateX(0)"; 
+//   }, 10); 
+  
+//   setTimeout(() => {
+//     currentImageElement.src = images[nextIndex]; 
+//     currentImageElement.style.transform = "translateX(0)"; 
+//     nextImageElement.style.display = "none"; 
+//     currentIndex = nextIndex; 
+//   }, 500); 
+// });
+
 
 
 // Set initial state when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    changeContent(1); // This activates the first dot and sets the corresponding text and image.
+    changeContent(1); 
+    console.log("consoling bro");
 });
+
+
+let counter = 1;
+
+function callFunctionWithParam() {
+
+    counter++;
+    if(counter === 4) {
+        counter = 1;
+    }
+    changeContent(counter);
+    
+    // Increment counter and reset to 1 if it exceeds 3
+    
+  }
+
+  setInterval(callFunctionWithParam, 5000);
 
 function changeAbout(about) {
     const abouts = document.querySelectorAll('.abouts');
@@ -244,3 +256,53 @@ function aboutDropdown(about) {
 }
 
 
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide-img');
+const dots = document.querySelectorAll('.dot');
+
+// Array of slide texts to change content dynamically
+const slideTexts = [
+    {
+        heading: "LOVE WHAT YOU BRING TO THE TABLE",
+        paragraph: "You'll find all our natural products filled with nutritious goodness and ready for your family to enjoy."
+    },
+    {
+        heading: "FRESH INGREDIENTS",
+        paragraph: "Our products are made from the freshest ingredients sourced directly from local farms."
+    },
+    {
+        heading: "READY FOR YOUR FAMILY",
+        paragraph: "We ensure that everything we make is nutritious and ready for your family to enjoy together."
+    }
+];
+
+// Function to change slides and apply transitions
+function currentSlide(index) {
+    // Update the slide index
+    currentSlideIndex = index;
+
+    // Hide all images and deactivate all dots
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+    });
+
+    // Show the current image and activate the corresponding dot
+    slides[currentSlideIndex].classList.add('active');
+    dots[currentSlideIndex].classList.add('active');
+
+    // Update the content text dynamically based on the slide index
+    const contentHeading = document.querySelector('.content h2');
+    const contentParagraph = document.querySelector('.content p');
+    contentHeading.textContent = slideTexts[currentSlideIndex].heading;
+    contentParagraph.textContent = slideTexts[currentSlideIndex].paragraph;
+}
+
+// Initialize the first slide as active
+currentSlide(0);
+
+// Automatically change slides every 5 seconds
+setInterval(() => {
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length; // Increment slide index and loop back to 0 when reaching the end
+    currentSlide(currentSlideIndex);
+}, 5000); // Change slides every 5 seconds (5000ms)

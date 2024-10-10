@@ -1413,14 +1413,15 @@ button:hover {
   }
   
   .footer-section p {
-    margin: 4%;
+    margin: 2%;
     font-size: 16px;
     white-space: nowrap;
     transform: translateX(-20px);
+    transform: translateY(5px);
   }
   
   .address p{
-    transform: translateY(-4px);
+    transform: translateY(3px);
   }
 
   .footer-bottom {
@@ -1508,22 +1509,21 @@ button:hover {
     position: relative;
   }
   
-  .slides {
+  /* .slides {
     width: 100%;
     overflow: hidden;
     position: relative;
-    /* background-image: url("images/love-orange-bg.png"); */
-  }
+  } */
   
   .slide {
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     /* background-size: cover; */
     /* background-repeat: no-repeat; */
     /* background-position: center; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
     /* background-image: url("images/love-packistani-food.png"); */
   }
 
@@ -1531,23 +1531,36 @@ button:hover {
     /* position: absolute; */
     /* height: 100%; */
     /* aspect-ratio: 1 / 1; */
-    width: 100%;
-    position: relative;
+    /* width: 100%; */
+    /* position: relative; */
   }
   
   .love {
-    animation: slideIn 1s ease-in-out forwards;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
   }
 
   .fade-in {
     opacity: 0; /* Initially hidden */
-    animation: fadeIn 0.5s ease-in-out forwards; /* Fade-in animation */
-    animation-delay: 1s; /* Optional: delay before the fade-in starts */
+    animation: fadeIn 0.2s ease-in-out forwards; /* Fade-in animation */
+    /* animation-delay: 0.1s;  */
+  }
+
+  .fade-out {
+    opacity: 1;
+    animation: fadeOut 0.2s ease-in-out forwards; /* Fade-in animation */
+    /* animation-delay: 0.1s;  */
   }
 
   @keyframes fadeIn {
     to {
         opacity: 1; /* Fade in by setting opacity to 1 */
+    }
+  }
+
+  @keyframes fadeOut {
+    to {
+        opacity: 0; /* Fade in by setting opacity to 1 */
     }
   }
 
@@ -1560,36 +1573,75 @@ button:hover {
     }
   } 
 
-  .content {
+
+
+  #main-image, #nextImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+
+
+  .love-images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+  }
+
+  #love-background {
+    width: 60%;
+    height: auto;
+
+  }
+
+
+  #love-food {
+    width: 57%;
+    height: auto;
+    display: inline;
+  }
+
+  #love-img, #love-next-img {
+    position: absolute;
+  top: 0;
+  left: 57%;
+  width: 57%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  }
+
+
+  .slide-right {
+    transform: translateX(100%); /* Moves the image 100% to the right */
+  }
+
+
+
+  /* .content {
     color: white;
-    /* text-align: center; */
     width: 60%;
     height: 100%;
-    /* position: absolute;
-    left: 50px; */
   }
-  
+   */
   .love-img {
     position: absolute;
   
   }
   
   .love-container {
-    /* background-image: url("images/love-what-section.png");
-    background-repeat: no-repeat;
-    background-size: cover; */
-    /* height: 800px; */
-    /* height: auto; */
     position: relative;
-    /* background-image: url("images/delicious-pakistani-food-with-sauce-high-angle-3.png"); */
     background-repeat: no-repeat;   
     background-size: cover;
-    /* width: 100%; */
+    overflow: hidden;
   }
   
 
-  
-  
   .love {
     width: 100%;
     position: relative;
@@ -1600,41 +1652,22 @@ button:hover {
   }
   
 
-  #main-image {
-    width: 100%;
-  }
-
   .text-section {
-    /* flex: 1; */
-    /* padding-left: 180px; */
-    /* padding-top: 800px; */
-    /* width: 20%; */
     position: absolute;
     top: 35%;   
     left: 8%;  
     width: 46%;
-    /* size: 1rem; */
-    /* align-items: centers; */
-    /* justify-content: center; */
-    /* background-image: url("images/love-what-section.png"); */
   }
   
-  .text-section h1 {
-    /* font-size: 42px; */
-    /* font-size: 2rem; */
-  }
   
   .text-section h1 {
-
     color: white;
-    /* font-size: 22px; */
     font-size: 60px;
     line-height: 70px;   ;
     padding-bottom: 10px;
   }
   
   .text-section p {
-    /* font-size: 17px; */
     font-size: 25px;
     line-height: 35px;
     font-weight: 700;
@@ -1666,7 +1699,7 @@ button:hover {
   .content img {
     /* max-width: 100%; */
     /* height: 100%; */
-    position: absolute;
+    /* position: absolute; */
   }
   
   .carousel-dots {
@@ -2288,27 +2321,108 @@ button:hover {
 
 
   
-  /* Slider */
+.slider {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure content and image have the same height */
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+  max-height: 100vh; /* Limit the height to the viewport height */
+  height: auto; /* Let the height adjust based on width */
+}
 
-  .navigation {
-    display: flex;
-    justify-content: left;
-    padding: 3rem 0;
+.content {
+  width: 50%; /* Content takes up half the slider width */
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('images/love-orange-background.png'); /* Updated background image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* Ensure content takes the same height as the slider (same as image) */
+  position: relative;
+  
+  /* Adding error handling for missing background image */
+  background-color: #ff7700; /* Fallback background color in case the image fails to load */
+}
+
+/* Apply transition only to the text */
+.content h2, .content p {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Ensure smooth transition for the text */
+}
+
+.content p {
+  color: black; /* Make the paragraph text black */
+}
+
+/* Make the text larger on bigger screens */
+@media (min-width: 768px) {
+  .content h2 {
+      font-size: 2.5rem; /* Increase heading font size on larger screens */
   }
 
-  .navigation span:hover {
-    cursor: pointer;
+  .content p {
+      font-size: 1.2rem; /* Increase paragraph font size on larger screens */
   }
-  
-  .navigation .dot {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    background-color: white;
-    margin: 0 13px;
+}
+
+@media (min-width: 1024px) {
+  .content h2 {
+      font-size: 3rem; /* Further increase heading font size on larger screens */
   }
-  
-  .navigation .dot.active {
-    background-color: black;
+
+  .content p {
+      font-size: 1.5rem; /* Further increase paragraph font size on larger screens */
   }
-  
+}
+
+.image-container {
+  width: 50%; /* Image takes up half the slider width */
+  height: 100%; /* Ensure the image container matches the height of the slider */
+  position: relative;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers its container while maintaining aspect ratio */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease; /* Increase the duration to 1.5 seconds for a slower fade */
+}
+
+.slide-img.active {
+  opacity: 1; /* Show the active image */
+}
+
+/* Dots will be positioned higher */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute; /* Fix the dots relative to the content */
+  bottom: 50px; /* Move dots higher by increasing the 'bottom' value */
+  width: 100%;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: white; /* Make the dots white when not active */
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: black; /* Make the active dot black */
+}

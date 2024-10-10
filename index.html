@@ -41,12 +41,12 @@
                 <ul id="nav-bar">
                     <ul id="about-normal" class="four">
                         <li class="about-first one">
-                            <a class="about-us" href="about.html">ABOUT US  <i class="arrow"></i>&nbsp;&nbsp;&nbsp;&nbsp; <br><span class="subtitle">HOMEMADE STYLE</span></a>
+                            <a class="about-us" href="about.html#aboutDropdown:1">ABOUT US  <i class="arrow"></i>&nbsp;&nbsp;&nbsp;&nbsp; <br><span class="subtitle">HOMEMADE STYLE</span></a>
                         </li>
-                        <li class="about-hover first"><a href="about.html">OUR STORY</a></li>
+                        <li class="about-hover first"><a href="about.html#aboutDropdown:1">OUR STORY</a></li>
                         <li class="about-hover "><a href="about.html#aboutDropdown:2">MISSION</a></li>
                         <li class="about-hover "><a href="about.html#aboutDropdown:3">VISION</a></li>
-                        <li class="about-hover "><a href="about.html#aboutDropdown:4">QUALITY <br> + ISO 22000</a></li>
+                        <li class="about-hover "><a href="about.html#aboutDropdown:4">QUALITY</a></li>
                     </ul>
                     <ul id="about-normal" class="two">
                         <li class="about-first">
@@ -124,16 +124,43 @@
         </div>
     </section>
 
-    <div class="love-container">
-        <img class="love" id="main-image" src="images/love-pakistani.png">
-        <div class="text-section">
-            <h1 id="info-text" class="fade-in">LOVE WHAT YOU <br/>BRING TO THE TABLE</h1>
-            <p class="fade-in">You’ll find all our natural products filled with <br/> nutritious goodness and ready for your family to enjoy.</p>
+    <!-- <div class="love-container" id="love-container">
+        <div class="love-images">
+            <img id="love-background" src="images/love-orange-background.png">
+            <div id="love-food">
+                <img id="love-img" src="images/love-packistani-food.png">
+                <img id="love-next-img" src="images/love-empanadas.png">
+            </div>
+        </div>
+        <div class="text-section"> 
+            <h1 id="info-text" class="">LOVE WHAT YOU <br/>BRING TO THE TABLE</h1>
+            <p class="">You’ll find all our natural products filled with <br/> nutritious goodness and ready for your family to enjoy.</p>
             <div class="footer-navigation">
               <span class="dot active" onclick="changeContent(1)"></span>
               <span class="dot" onclick="changeContent(2)"></span>
               <span class="dot" onclick="changeContent(3)"></span>
             </div>
+        </div>
+    </div> -->
+
+    
+    <div class="slider">
+        <div class="content">
+            <h2>LOVE WHAT YOU BRING TO THE TABLE</h2>
+            <p>You'll find all our natural products filled with nutritious goodness and ready for your family to enjoy.</p>
+            <!-- Dots positioned inside the content area -->
+            <div class="dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    
+        <!-- The image container that changes when the dots are clicked -->
+        <div class="image-container">
+            <img src="images/love-packistani-food.png" alt="Delicious food" class="slide-img active">
+            <img src="images/love-empanadas.png" alt="Second image" class="slide-img">
+            <img src="images/love-packistani-food.png" alt="Third image" class="slide-img">
         </div>
     </div>
 

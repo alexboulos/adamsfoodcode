@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="slider">
+    <div class="content">
+        <h2>LOVE WHAT YOU BRING TO THE TABLE</h2>
+        <p>You'll find all our natural products filled with nutritious goodness and ready for your family to enjoy.</p>
+        <!-- Dots positioned inside the content area -->
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <!-- The image container that changes when the dots are clicked -->
+    <div class="image-container">
+        <img src="images/love-packistani-food.png" alt="Delicious food" class="slide-img active">
+        <img src="images/love-empanadas.png" alt="Second image" class="slide-img">
+        <img src="images/love-packistani-food.png" alt="Third image" class="slide-img">
+    </div>
+</div>
+
+<script src="scripto.js"></script>
+
+</body>
+</html>
