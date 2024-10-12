@@ -129,32 +129,23 @@
     font-weight: 800;
   }
 
-  .shadow img{
-    position:fixed; 
-    z-index: 15;
-    pointer-events:none;
+
+  
+  
+  .menu-icon {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    right: 15%;
+    top: 30px;
+    z-index: 999;
   }
   
-  
-  
-  
-  .sticky {
-    position: fixed;
-    transform: translateY(-60px); 
-    /* top: -840px; */
-    /* margin-top: 0; */
-    width: fit-content;
-    /* margin-top: 80px; */
-    z-index: 1000;
-    transition: all 0.3s ease;
-    /* background-image: url("/images/menu-rect.png"); */
-    background-size: contain;
-    background-repeat: no-repeat;
+  .sticky  {
+    transform: translateY(-40px); 
   }
 
-  .sticky .menu-icon {
-    /* transform: translateY(60px);   */
-  }
 
   .sticky .active {
     color: #ed7e2c;
@@ -174,8 +165,13 @@
   .hidden {
     transform: translateY(-100%);
     transition: all 0.7s ease;
-
   }
+
+  #rect {
+    height: 160px;
+    background-color: #1d1d1b;
+  }
+
   #rect img{
     /* position: absolute;
     top: 500px; */
@@ -215,12 +211,15 @@
 
 
   #imagine-logo {
+    background-image: url("images/adams-food-logo-white.png");
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 200px;
     height: 200px;
     cursor: pointer;
     position: absolute;
     left: 100px;
-    top: 0;
+    top: 15px;
   }
 
 
@@ -290,7 +289,7 @@
   }
   
   #nav-bar .four li {
-    margin-bottom: 12px ;
+    /* margin-bottom: 12px ; */
   }
 
   #nav-bar .first {
@@ -500,14 +499,34 @@ a.active {
     text-decoration: none;
   }
   
-  .first a {
-    margin-top: 8px;  
-  }
 
   .four .first a {
-    margin-top: 4px;
+    margin-top: 10px;
+    /* padding-bottom: -9px; */
   }
   
+  .four a {
+    margin-top: -6px ;
+  }
+
+
+  .two .first a {
+    margin-top: 8px;
+  }
+
+  .three .first a {
+    margin-top: 14px;
+  }
+
+  .three a {
+    margin-top: -3px;
+  }
+
+ 
+
+
+
+
   #about-normal:hover .about-hover {
     display: flex;
   }
@@ -1133,8 +1152,9 @@ button:hover {
   .product:hover p {
     font-weight: 800;
     transition:  1s ease, transform 0.3s ease;
-  
+
   }
+
   
   .product h3 {
     visibility: hidden;
@@ -1349,25 +1369,6 @@ button:hover {
     font-size: 16px;
   }
   
-  .main-container {
-    display: flex;
-    background-image: url("images/love-what-section.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .image-section {
-    /* flex: 1; */
-    /* background-image: url('images/samosa.png'); */
-    background-size: cover;
-    /* right: ; */
-    background-repeat: no-repeat;
-  }
-  
-  .image-section img {
-    
-  }
-  
   .contact-description span{
     line-height: 40px;
   }
@@ -1504,224 +1505,8 @@ button:hover {
   }
   
   
-  .carousel {
-    width: 100%;
-    position: relative;
-  }
-  
-  /* .slides {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  } */
-  
-  .slide {
-    /* width: 100%; */
-    /* height: 100%; */
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
-    /* background-position: center; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* background-image: url("images/love-packistani-food.png"); */
-  }
 
-  .slide img{
-    /* position: absolute; */
-    /* height: 100%; */
-    /* aspect-ratio: 1 / 1; */
-    /* width: 100%; */
-    /* position: relative; */
-  }
-  
-  .love {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-  }
-
-  .fade-in {
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 0.2s ease-in-out forwards; /* Fade-in animation */
-    /* animation-delay: 0.1s;  */
-  }
-
-  .fade-out {
-    opacity: 1;
-    animation: fadeOut 0.2s ease-in-out forwards; /* Fade-in animation */
-    /* animation-delay: 0.1s;  */
-  }
-
-  @keyframes fadeIn {
-    to {
-        opacity: 1; /* Fade in by setting opacity to 1 */
-    }
-  }
-
-  @keyframes fadeOut {
-    to {
-        opacity: 0; /* Fade in by setting opacity to 1 */
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-        transform: translateX(-100%); /* Image starts from off the screen (left) */
-    }
-    to {
-        transform: translateX(0); /* Image ends at its original position */
-    }
-  } 
-
-
-
-  #main-image, #nextImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-  }
-
-
-  .love-images{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: auto;
-    overflow: hidden;
-  }
-
-  #love-background {
-    width: 60%;
-    height: auto;
-
-  }
-
-
-  #love-food {
-    width: 57%;
-    height: auto;
-    display: inline;
-  }
-
-  #love-img, #love-next-img {
-    position: absolute;
-  top: 0;
-  left: 57%;
-  width: 57%;
-  height: 100%;
-  transition: transform 0.5s ease;
-  }
-
-
-  .slide-right {
-    transform: translateX(100%); /* Moves the image 100% to the right */
-  }
-
-
-
-  /* .content {
-    color: white;
-    width: 60%;
-    height: 100%;
-  }
-   */
-  .love-img {
-    position: absolute;
-  
-  }
-  
-  .love-container {
-    position: relative;
-    background-repeat: no-repeat;   
-    background-size: cover;
-    overflow: hidden;
-  }
-  
-
-  .love {
-    width: 100%;
-    position: relative;
-  }
-  
-  .love-food {
-    position: absolute;
-  }
-  
-
-  .text-section {
-    position: absolute;
-    top: 35%;   
-    left: 8%;  
-    width: 46%;
-  }
-  
-  
-  .text-section h1 {
-    color: white;
-    font-size: 60px;
-    line-height: 70px;   ;
-    padding-bottom: 10px;
-  }
-  
-  .text-section p {
-    font-size: 25px;
-    line-height: 35px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  
-  .footer-navigation {
-    display: flex;
-    justify-content: left;
-    padding: 3rem 0;
-  }
-
-  .footer-navigation a:hover {
-    cursor: pointer;
-  }
-  
-  .footer-navigation .dot {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    background-color: white;
-    margin: 0 13px;
-  }
-  
-.dot .active {
-    background-color: black;
-  }
-  
-  .content img {
-    /* max-width: 100%; */
-    /* height: 100%; */
-    /* position: absolute; */
-  }
-  
-  .carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    display: inline-block;
-    border-radius: 50%;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .dot.active {
-    background-color: #000;
-  }
+/* BACK TO TOP  */
   
   .backtop {
     position: relative;
@@ -1737,29 +1522,9 @@ button:hover {
     right: 200px;
   }
   
-  .love-what-you {
-    background-image: url("images/love-orange-bg.png");
-    height: 800px;
-  }
-  
-  .bring {
-    position: relative;
-    padding-top: 200px;
-    padding-left: 160px;
-  
-  }
-  
-  .bring h1 {
-    color: white;
-    font-size: 42px;
-    line-height: 50px;
-  }
-  
-  .bring p {
-    font-weight: 700;
-    font-size: 25px;
-  }
-  
+ 
+  /* SOCIALS */
+
   .container-socials .stacked-button {
     visibility: hidden;
     opacity: 0;
@@ -1784,11 +1549,141 @@ button:hover {
   }
   
   
+  /* LOVE WHAT YOU BRING  */
+
+
+  
+.slider {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure content and image have the same height */
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+  max-height: 80vh; /* Limit the height to the viewport height */
+  height: auto; /* Let the height adjust based on width */
+}
+
+.content {
+  width: 60%; /* Content takes up half the slider width */
+  padding: 100px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('images/love-orange-background.png'); /* Updated background image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* Ensure content takes the same height as the slider (same as image) */
+  position: relative;
+  
+  /* Adding error handling for missing background image */
+  background-color: #ff7700; /* Fallback background color in case the image fails to load */
+}
+
+/* Apply transition only to the text */
+.content h2, .content p {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Ensure smooth transition for the text */
+
+}
+
+.content h2 {
+  line-height: 60px;
+  padding-bottom: 10px;
+  font-size: 52px;
+
+}
+
+.content p {
+  color: black; /* Make the paragraph text black */
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 25px;
+
+}
+
+
+.image-container {
+  width: 50%; /* Image takes up half the slider width */
+  height: 100%; /* Ensure the image container matches the height of the slider */
+  position: relative;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers its container while maintaining aspect ratio */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease; /* Increase the duration to 1.5 seconds for a slower fade */
+}
+
+.slide-img.active {
+  opacity: 1; /* Show the active image */
+}
+
+/* Dots will be positioned higher */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute; 
+  bottom: 100px; 
+  width: 100%;
+  left: -250px;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  margin: 0 10px;
+  background-color: white; /* Make the dots white when not active */
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: black; /* Make the active dot black */
+}
+
   
   
-  @media only screen and (max-width: 1900px) {
+  @media only screen and (max-width: 1800px) {
+
+
+  .four .first a {
+    margin-top: 12px;
+    /* padding-bottom: -9px; */
+  }
+  
+  .four a {
+    margin-top: 0px ;
+  }
+
+
+  .two .first a {
+    margin-top: 5px;
+  }
+
+  .three .first a {
+    margin-top: 15px;
+  }
+
+  .three a {
+    margin-top: -0px;
+  }
+
   
 
+    .sticky  {
+      transform: translateY(-30px); 
+    }
     .nav-container {
       /* width: 1250px; */
     }
@@ -1815,13 +1710,6 @@ button:hover {
     }
   
     
-    .three a {
-      margin-top: -2px;
-    }
-
-    .three .first a {
-      margin-top: 14px;
-    }
 
     nav {
         margin-left: 100px;
@@ -1874,6 +1762,16 @@ button:hover {
   
   @media only screen and (max-width: 1500px) {
 
+    .content h2 {
+      font-size: 42px; 
+      line-height: 45px;
+  }
+
+  .content p {
+      font-size: 20px; 
+  }
+
+
     .enormous-rect {
       display: none;
     }
@@ -1897,13 +1795,28 @@ button:hover {
         margin-top: 0px;
     }
 
-    .first a {
+    .four .first a {
+      margin-top: 3px;
+      /* padding-bottom: -9px; */
+    }
+    
+    .four a {
+      margin-top: -3px ;
+    }
+  
+  
+    .two .first a {
       margin-top: 5px;
     }
-
-    .two .first a {
-      padding-top: 14px;
+  
+    .three .first a {
+      margin-top: 6px;
     }
+  
+    .three a {
+      margin-top: -3px;
+    }
+  
 
     .subtitle {
         font-size: 11px;
@@ -1915,7 +1828,7 @@ button:hover {
     }
 
     nav {
-        margin-top: 120px;
+        margin-top: 110px;
         margin-left: 10px;
         padding-top: 20px;
         padding-bottom: 15px;
@@ -1968,6 +1881,7 @@ button:hover {
 
   @media only screen and (max-width: 1300px) {
 
+
     .contact-form {
       /* left: 30%; */
     }
@@ -1978,11 +1892,9 @@ button:hover {
     #nav-bar {
         gap: 0;
     }
-    .about-hover a{
-        font-size: 10px;
-    }
+    
     .subtitle {
-        font-size: 9px;
+        font-size: 10px;
     }
     nav {
         margin-left: 0px;
@@ -2004,13 +1916,36 @@ button:hover {
         bottom: 17px;
         /* margin-right: 20px; */
     }
-    nav ul li a {
+    /* nav ul li a {
         font-size: 11px;
         line-height: 5px;
-    }
+    } */
     .about-first {
         margin-bottom: 200px;
     }
+
+    .four .first a {
+      margin-top: -3px;
+      /* padding-bottom: -9px; */
+    }
+    
+    .four a {
+      margin-top: -4px ;
+    }
+  
+  
+    .two .first a {
+      margin-top: 5px;
+    }
+  
+    .three .first a {
+      margin-top: 6px;
+    }
+  
+    .three a {
+      margin-top: -3px;
+    }
+  
 
     .text-section h1 {
       /* font-size: 39px; */
@@ -2045,6 +1980,16 @@ button:hover {
   /* Mobile */
 
   @media only screen and (max-width: 1200px) {
+
+    .content h2 {
+      font-size: 28px; 
+      line-height: 30px;
+  }
+
+  .content p {
+      font-size: 15px; 
+  }
+
 
     .footer-content {
       background-image: none;
@@ -2210,25 +2155,49 @@ button:hover {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 60px;
+      top: 260px;
       left: 0;
       width: 100%;
-      background-color: #fff;
+      /* background-color: #fff; */
       text-align: center;
     }
+    
+
+
+  #about-normal {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+    text-align: left;
+    margin-top: -25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* margin-right: 50px; */
+    /* margin-left: 20px; */
+  }
   
+  #about-normall {
+    padding-top: 40px;
+    text-align: left;
+    margin-top: -25px;
+    padding-left: 10px;
+  }
+  
+  
+  #about-normal li {
+    line-height: 16px;
+  }
+  
+  #about-normall li {
+    line-height: 16px;
+  }
+  
+
+
     .nav-bar.active {
       display: flex;
     }
   
-    .menu-icon {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      position: fixed;
-      right: 5%;
-      top: 50px;
-    }
   
     .line {
       width: 70px;
@@ -2237,10 +2206,29 @@ button:hover {
       margin: 10px;
 
     }
+
+    .menu-toggle {
+
+    }
+
   }
 
 
   @media (max-width: 900px) {
+
+  .content {
+    padding: 50px;
+  }
+
+  .content h2 {
+      font-size: 20px; 
+      line-height: 20px;
+  }
+
+  .content p {
+      font-size: 14px; 
+  }
+
 
     .footer-navigation .dot {
       height: 15px;
@@ -2270,8 +2258,8 @@ button:hover {
     }
 
     .dot {
-      height: 10px;
-      width: 10px;
+      height: 15px;
+      width: 15px;
       margin: 0 5px;
       display: inline-block;
       border-radius: 50%;
@@ -2319,110 +2307,3 @@ button:hover {
     }
   }
 
-
-  
-.slider {
-  position: relative;
-  width: 100vw; /* Full viewport width */
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Ensure content and image have the same height */
-  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
-  max-height: 100vh; /* Limit the height to the viewport height */
-  height: auto; /* Let the height adjust based on width */
-}
-
-.content {
-  width: 50%; /* Content takes up half the slider width */
-  padding: 20px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-image: url('images/love-orange-background.png'); /* Updated background image path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%; /* Ensure content takes the same height as the slider (same as image) */
-  position: relative;
-  
-  /* Adding error handling for missing background image */
-  background-color: #ff7700; /* Fallback background color in case the image fails to load */
-}
-
-/* Apply transition only to the text */
-.content h2, .content p {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out; /* Ensure smooth transition for the text */
-}
-
-.content p {
-  color: black; /* Make the paragraph text black */
-}
-
-/* Make the text larger on bigger screens */
-@media (min-width: 768px) {
-  .content h2 {
-      font-size: 2.5rem; /* Increase heading font size on larger screens */
-  }
-
-  .content p {
-      font-size: 1.2rem; /* Increase paragraph font size on larger screens */
-  }
-}
-
-@media (min-width: 1024px) {
-  .content h2 {
-      font-size: 3rem; /* Further increase heading font size on larger screens */
-  }
-
-  .content p {
-      font-size: 1.5rem; /* Further increase paragraph font size on larger screens */
-  }
-}
-
-.image-container {
-  width: 50%; /* Image takes up half the slider width */
-  height: 100%; /* Ensure the image container matches the height of the slider */
-  position: relative;
-}
-
-.slide-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image covers its container while maintaining aspect ratio */
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1.5s ease; /* Increase the duration to 1.5 seconds for a slower fade */
-}
-
-.slide-img.active {
-  opacity: 1; /* Show the active image */
-}
-
-/* Dots will be positioned higher */
-.dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  position: absolute; /* Fix the dots relative to the content */
-  bottom: 50px; /* Move dots higher by increasing the 'bottom' value */
-  width: 100%;
-}
-
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
-  background-color: white; /* Make the dots white when not active */
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dot.active {
-  background-color: black; /* Make the active dot black */
-}

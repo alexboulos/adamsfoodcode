@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam's Food</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -25,19 +24,20 @@
         </div>
        <div id="rect" class="rect1">
             <a href="index.html"><div id="imagine-logo"></div></a>
-
-            <img class="small-rect" src="images/menu-rect2.png">
+        
+            <!-- <img class="small-rect" src="images/menu-rect2.png">
             <img class="big-rect" src="images/menu-rect-big2.png">
             <img class="giant-rect" src="images/menu-rect-mobile2.png">
-            <img class="enormous-rect" src="images/menu-rect-mobile-bigger.png">
+            <img class="enormous-rect" src="images/menu-rect-mobile-bigger.png"> -->
        </div>
+       <div id="menu-icon" class="menu-icon" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>  
         <div class="nav-container" id="navbar">
             <nav>
-                <div class="menu-icon" onclick="toggleMenu()">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>           
+                         
                 <ul id="nav-bar">
                     <ul id="about-normal" class="four">
                         <li class="about-first one">
@@ -72,6 +72,9 @@
                 </ul>
             </nav>
         </div>
+
+
+        <!-- Socials  -->
 
         <div class="container-socials">
             <div class="button-image-stack">
@@ -124,24 +127,7 @@
         </div>
     </section>
 
-    <!-- <div class="love-container" id="love-container">
-        <div class="love-images">
-            <img id="love-background" src="images/love-orange-background.png">
-            <div id="love-food">
-                <img id="love-img" src="images/love-packistani-food.png">
-                <img id="love-next-img" src="images/love-empanadas.png">
-            </div>
-        </div>
-        <div class="text-section"> 
-            <h1 id="info-text" class="">LOVE WHAT YOU <br/>BRING TO THE TABLE</h1>
-            <p class="">You’ll find all our natural products filled with <br/> nutritious goodness and ready for your family to enjoy.</p>
-            <div class="footer-navigation">
-              <span class="dot active" onclick="changeContent(1)"></span>
-              <span class="dot" onclick="changeContent(2)"></span>
-              <span class="dot" onclick="changeContent(3)"></span>
-            </div>
-        </div>
-    </div> -->
+    <!-- Love What You Bring  -->
 
     
     <div class="slider">
@@ -149,11 +135,12 @@
             <h2>LOVE WHAT YOU BRING TO THE TABLE</h2>
             <p>You'll find all our natural products filled with nutritious goodness and ready for your family to enjoy.</p>
             <!-- Dots positioned inside the content area -->
-            <div class="dots">
-                <span class="dot active" onclick="currentSlide(0)"></span>
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-            </div>
+            
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
         </div>
     
         <!-- The image container that changes when the dots are clicked -->

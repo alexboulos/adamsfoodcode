@@ -14,19 +14,23 @@ window.onload = function() {
 
 document.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
+    const nav = document.getElementsByTagName('nav');
     const footer = document.getElementById('footer');
     const rect = document.getElementById('rect');
     const footerPosition = footer.getBoundingClientRect().top;
     const screenHeight = window.innerHeight;
 
+    // console.log('footerpos:'+footerPosition);
+
     // Check if footer is in view
     if (footerPosition < screenHeight) {
         navbar.classList.add('hidden');
         rect.classList.add('hidden');
+        // nav.classList.add('hidden');
     } else {
         navbar.classList.remove('hidden');
         rect.classList.remove('hidden');
-
+        // nav.classList.remove('hidden');
     }
 });
 
@@ -181,27 +185,27 @@ let currentIndex = 0;
 
 
 // Set initial state when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    changeContent(1); 
-    console.log("consoling bro");
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     changeContent(1); 
+//     console.log("consoling bro");
+// });
 
 
-let counter = 1;
+// let counter = 1;
 
-function callFunctionWithParam() {
+// function callFunctionWithParam() {
 
-    counter++;
-    if(counter === 4) {
-        counter = 1;
-    }
-    changeContent(counter);
+//     counter++;
+//     if(counter === 4) {
+//         counter = 1;
+//     }
+//     changeContent(counter);
     
     // Increment counter and reset to 1 if it exceeds 3
     
-  }
+  
 
-  setInterval(callFunctionWithParam, 5000);
+//   setInterval(callFunctionWithParam, 5000);
 
 function changeAbout(about) {
     const abouts = document.querySelectorAll('.abouts');
@@ -305,4 +309,11 @@ currentSlide(0);
 setInterval(() => {
     currentSlideIndex = (currentSlideIndex + 1) % slides.length; // Increment slide index and loop back to 0 when reaching the end
     currentSlide(currentSlideIndex);
-}, 5000); // Change slides every 5 seconds (5000ms)
+}, 5000); 
+
+
+function toggleMenu() {
+    const menu = document.getElementById("menu-icon");
+
+    menu.classList.add("menu-toggle");
+}
