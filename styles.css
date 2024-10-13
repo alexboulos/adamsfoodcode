@@ -35,7 +35,7 @@
     background-position: center;
     color: white; 
   }
-
+/* 
   .about-header .hero-text{
     margin-top: 60px;
   }
@@ -44,24 +44,41 @@
     font-size: 34px;
     font-weight: 800;
 
-  }
+  } */
 
   .about-header .hero-text h2{
     font-size: 62px;
     font-weight: 800;
   }
 
+  /* .media-hero-text{
+    top: 60%;
+    left: 110px;
+  }
+
+  .media-hero-text h1{
+    font-size: 34px;
+    font-weight: 800;
+  }
+
+  .media-hero-text h2{
+    font-size: 70px;
+    font-weight: 800;
+  } */
+
   .contact-header .hero-text {
-    margin-left: 90px;
+    /* margin-left: 70px; */
+    top: 60%;
+    left: 80px;
   }
 
   .contact-header .hero-text h1{
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 800;
   }
 
   .contact-header .hero-text h2{
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 800;
   }
   .contact-header {
@@ -128,6 +145,7 @@
   .private-description .orange {
     font-weight: 800;
   }
+
 
 
   
@@ -972,7 +990,6 @@ button:hover {
     left: 100px;
     top: 600px;
     transform: translateY(-50%);
-    /* padding-left: 80px; */
   }
 
   
@@ -994,11 +1011,11 @@ button:hover {
     font-size: 30px;
     margin-bottom: 50px;
   }
-  
+/*   
   .contact-hero-text{
     top: 550px;
     left: 40px;
-  }
+  } */
 
 
   .about-hero-text h2 {
@@ -1028,6 +1045,8 @@ button:hover {
     font-size: 70px;
     font-weight: 800;
   }
+
+
 
   .btn {
     display: inline-block;
@@ -1095,6 +1114,8 @@ button:hover {
     margin-bottom: 2px;
     transition:  0.3s ease, transform 0.3s ease;
   }
+
+  
   
   .view-all {
     width: 170px;
@@ -1566,7 +1587,8 @@ button:hover {
 
 .content {
   width: 60%; /* Content takes up half the slider width */
-  padding: 100px;
+  padding: 150px;
+  padding-top: 300px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -1590,9 +1612,9 @@ button:hover {
 }
 
 .content h2 {
-  line-height: 60px;
+  line-height: 70px;
   padding-bottom: 10px;
-  font-size: 52px;
+  font-size: 72px;
 
 }
 
@@ -1629,12 +1651,12 @@ button:hover {
 /* Dots will be positioned higher */
 .dots {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   margin-top: 20px;
-  position: absolute; 
-  bottom: 100px; 
+  position: relative; 
+  bottom: -50px; 
   width: 100%;
-  left: -250px;
+  left: 0px;
 }
 
 .dot {
@@ -1757,6 +1779,15 @@ button:hover {
       justify-content: left;
       padding: 40px 0;
   }
+
+  .content h2 {
+    font-size: 42px; 
+    line-height: 45px;
+}
+
+.content p {
+    font-size: 20px; 
+}
   
   }
   
@@ -1882,6 +1913,8 @@ button:hover {
   @media only screen and (max-width: 1300px) {
 
 
+    
+
     .contact-form {
       /* left: 30%; */
     }
@@ -1980,6 +2013,11 @@ button:hover {
   /* Mobile */
 
   @media only screen and (max-width: 1200px) {
+
+    .content { 
+      padding: 20px;
+      padding-top: 30px;
+    }
 
     .content h2 {
       font-size: 28px; 

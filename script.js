@@ -83,51 +83,8 @@ window.onscroll = function() {
 
 
 
-function changeImage(imageSrc) {
-    var img = document.getElementById("slidingImage");
-    
-    // Remove the sliding animation class if it's already applied
-    img.classList.remove("slide-in");
-    
-    // Change the image source
-    img.src = imageSrc;
-    
-    // Force a reflow to reset the animation (trick for restarting the animation)
-    void img.offsetWidth;
-    
-    // Re-add the sliding animation class
-    img.classList.add("slide-in");
-}
 
 
-function changeIndex(boxNumber) {
-    const indexImg = document.getElementById('index-header');
-    const box1 = document.getElementById('box1');
-    const box2 = document.getElementById('box2');
-    const box3 = document.getElementById('box3');
-
-
-    switch (boxNumber) {
-        case 1 :
-            indexImg.style.backgroundImage = "url('images/woman-with-food.png')";
-            box1.src = 'images/box-fill.png';
-            box2.src = 'images/box-empty.png';
-            box3.src = 'images/box-empty.png';
-            break;
-        case 2 :
-            indexImg.style.backgroundImage = "url('images/visual3.png')";
-            box1.src = 'images/box-empty.png';
-            box2.src = 'images/box-fill.png';
-            box3.src = 'images/box-empty.png';
-            break;
-        case 3 :
-            indexImg.style.backgroundImage = "url('images/woman-with-food.png')";
-            box1.src = 'images/box-empty.png';
-            box2.src = 'images/box-empty.png';
-            box3.src = 'images/box-fill.png';
-            break;
-    }
-}
 
 // let into = 1;
 // setInterval(changeContent(into++), 5000);
@@ -259,6 +216,7 @@ function aboutDropdown(about) {
     
 }
 
+// Love What You Bring 
 
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.slide-img');
@@ -316,4 +274,95 @@ function toggleMenu() {
     const menu = document.getElementById("menu-icon");
 
     menu.classList.add("menu-toggle");
+
+
 }
+
+
+// BANNER TOP 
+
+
+function changeIndex(boxNumber) {
+    const indexImg = document.getElementById('index-header');
+    const box1 = document.getElementById('box1');
+    const box2 = document.getElementById('box2');
+    const box3 = document.getElementById('box3');
+
+
+    switch (boxNumber) {
+        case 1 :
+            indexImg.style.backgroundImage = "url('images/woman-with-food.png')";
+            box1.src = 'images/box-fill.png';
+            box2.src = 'images/box-empty.png';
+            box3.src = 'images/box-empty.png';
+            currentBox(1);
+            break;
+        case 2 :
+            indexImg.style.backgroundImage = "url('images/visual3.png')";
+            box1.src = 'images/box-empty.png';
+            box2.src = 'images/box-fill.png';
+            box3.src = 'images/box-empty.png';
+            currentBox(2);
+            break;
+        case 3 :
+            indexImg.style.backgroundImage = "url('images/woman-with-food.png')";
+            box1.src = 'images/box-empty.png';
+            box2.src = 'images/box-empty.png';
+            box3.src = 'images/box-fill.png';
+            currentBox(3)
+            break;
+    }
+}
+
+let currentBoxIndex = 0;
+const banner = document.querySelectorAll('.slide-img');
+const boxes = document.querySelectorAll('.dot');
+
+// Array of slide texts to change content dynamically
+const bannerTexts = [
+    {
+        heading: "LOVE WHAT YOU BRING TO THE TABLE",
+        paragraph: "You'll find all our natural products filled with nutritious goodness and ready for your family to enjoy."
+    },
+    {
+        heading: "FRESH INGREDIENTS",
+        paragraph: "Our products are made from the freshest ingredients sourced directly from local farms."
+    },
+    {
+        heading: "READY FOR YOUR FAMILY",
+        paragraph: "We ensure that everything we make is nutritious and ready for your family to enjoy together."
+    }
+];
+
+// Function to change slides and apply transitions
+function currentBox(index) {
+    // Update the slide index
+    currentBoxIndex = index;
+
+    // Hide all images and deactivate all dots
+    banner.forEach((slide, i) => {
+        banner.classList.remove('active');
+        boxes[i].classList.remove('active');
+    });
+
+    // Show the current image and activate the corresponding dot
+    banner[currentBoxIndex].classList.add('active');
+    dots[currentBoxIndex].classList.add('active');
+
+    // Update the content text dynamically based on the slide index
+    const contentHeading = document.querySelector('.content h2');
+    const contentParagraph = document.querySelector('.content p');
+    contentHeading.textContent = slideTexts[currentBoxIndex].heading;
+    contentParagraph.textContent = slideTexts[currentBoxIndex].paragraph;
+}
+
+// Initialize the first slide as active
+currentBox(0);
+changeIndex(1)
+
+// Automatically change slides every 5 seconds
+setInterval(() => {
+    currentBoxIndex = (currentBoxIndex + 1) % banner.length; // Increment slide index and loop back to 0 when reaching the end
+    currentBox(currentBoxIndex);
+    changeIndex(currentBoxIndex);
+}, 5000); 
