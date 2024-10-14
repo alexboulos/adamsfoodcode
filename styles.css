@@ -805,6 +805,8 @@ button:hover {
 }
 
 
+
+
 .media-section{
 }
 
@@ -1057,6 +1059,8 @@ button:hover {
     border-radius: 30px;
     font-size: 20px;
     font-weight: bold;
+    width: fit-content;
+    margin-top: 20px;
   }
   
   
@@ -1113,9 +1117,13 @@ button:hover {
   .product p {
     margin-bottom: 2px;
     transition:  0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
   }
 
-  
+  .product-page p {
+    font-weight: 800;
+    font-size: 26px;
+  }
   
   .view-all {
     width: 170px;
@@ -1128,6 +1136,15 @@ button:hover {
     width: 100%;
     flex-wrap: wrap;
   }
+
+  .product-page {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    z-index: 2;
+  }
   
   .product {
     text-align: center;
@@ -1137,8 +1154,7 @@ button:hover {
     width: 360px;
     padding-bottom: 110px;
     transition:  0.3s ease, transform 0.3s ease;
-  
-  
+    z-index: 1;
   }
   
   .product img {
@@ -1149,8 +1165,6 @@ button:hover {
     z-index: 5;
     padding-bottom: 40px;
     transition:  0.6s ease, transform 0.3s ease;
-  
-  
   }
   
   .product:hover {
@@ -1158,7 +1172,10 @@ button:hover {
     z-index: 1;
     cursor: pointer;
     transition:  0.3s ease, transform 0.3s ease;
-  
+  }
+
+  .product-page .product {
+    background-image: none;
   }
   
   .product:hover img {
@@ -1227,7 +1244,7 @@ button:hover {
   .view-ig img {
     padding-top: 0;
   }
-
+  
 
   .view-ig a {
     cursor: pointer;
@@ -1251,14 +1268,15 @@ button:hover {
   
   
   .insta-item {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     background-color: #ccc;
     aspect-ratio: 1 / 1;
     width: auto;
     margin: 5px;
   }
   
+
   .insta-item img {
     width: 300px;
   }
