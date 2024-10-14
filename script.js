@@ -169,6 +169,8 @@ function changeAbout(about) {
 
 }
 
+// About 
+
 function aboutDropdown(about) {
     const aboutDescription = document.getElementById('about-description-text');
     const aboutNav = document.getElementById('about-nav-text');
@@ -211,6 +213,50 @@ function aboutDropdown(about) {
             mission.style.color = 'black';
             vision.style.color = 'black';
             quality.style.color = '#ed7e2c';
+            break;
+    }
+    
+}
+
+// Contact us 
+
+function contactDropdown(contact) {
+    const contactDescription = document.getElementById('contact-description-text');
+    const contactNav = document.getElementById('contact-nav-text');
+    const contactInfo = document.getElementById('contact');
+    const distributor = document.getElementById('distributor');
+    const findUs = document.getElementById('find-us');
+
+
+    // Update text and image based on the selected dot
+    switch (contact) {
+        case 1:
+            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
+            contactNav.innerHTML = "CONTACT INFO";
+            contactInfo.style.color = '#ed7e2c';
+            distributor.style.color = 'black';
+            findUs.style.color = 'black';
+            break;
+        case 2:
+            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
+            contactNav.innerHTML = "CONTACT INFO";
+            contactInfo.style.color = '#ed7e2c';
+            distributor.style.color = 'black';
+            findUs.style.color = 'black';
+            break;
+        case 3:
+            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
+            contactNav.innerHTML = "CONTACT INFO";
+            contactInfo.style.color = '#ed7e2c';
+            distributor.style.color = 'black';
+            findUs.style.color = 'black';
+            break;
+        case 4:
+            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
+            contactNav.innerHTML = "CONTACT INFO";
+            contactInfo.style.color = '#ed7e2c';
+            distributor.style.color = 'black';
+            findUs.style.color = 'black';
             break;
     }
     
@@ -341,7 +387,7 @@ function currentBox(index) {
 
     // Hide all images and deactivate all dots
     banner.forEach((slide, i) => {
-        banner.classList.remove('active');
+        slide.classList.remove('active');
         boxes[i].classList.remove('active');
     });
 
