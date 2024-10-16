@@ -247,7 +247,7 @@ function changeIndex(boxNumber) {
             break;
     }
     indexImg.style.opacity = 1;
-  }, 100); 
+  }, 10); 
 }
 
 let currentBoxIndex = 0;
