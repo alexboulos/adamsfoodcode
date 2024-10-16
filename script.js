@@ -2,11 +2,16 @@
 window.onload = function() {
     const hash = window.location.hash;
 
-    // Check if the hash starts with #menuAbout
     if (hash.startsWith('#aboutDropdown')) {
-        const param = hash.split(':')[1]; // Extract the parameter after the colon
+        const param = hash.split(':')[1]; 
         if (param) {
-            aboutDropdown(parseInt(param)); // Pass the parameter to menuAbout, parsing it to an integer
+            aboutDropdown(parseInt(param)); 
+        }
+    }
+    if (hash.startsWith('#contactDropdown')) {
+        const param = hash.split(':')[1]; 
+        if (param) {
+            contactDropdown(parseInt(param)); 
         }
     }
 };
@@ -19,48 +24,30 @@ document.addEventListener('scroll', function() {
     const rect = document.getElementById('rect');
     const footerPosition = footer.getBoundingClientRect().top;
     const screenHeight = window.innerHeight;
-
-    // console.log('footerpos:'+footerPosition);
-
-    // Check if footer is in view
     if (footerPosition < screenHeight) {
         navbar.classList.add('hidden');
         rect.classList.add('hidden');
-        // nav.classList.add('hidden');
     } else {
         navbar.classList.remove('hidden');
         rect.classList.remove('hidden');
-        // nav.classList.remove('hidden');
     }
 });
 
 
-
-// Function to handle menuAbout based on the parameter
 function menuAbout(about) {
     switch (about) {
         case 2:
-            aboutDropdown(2); // Call aboutDropdown function with parameter 2
+            aboutDropdown(2); 
             break;
         default:
             console.log("No matching case for:", about);
             break;
     }
 }
-
-
-
-
-// Get the navbar element
 const navbar = document.getElementById("navbar");
 const recto = document.getElementById("rect");
 const logo = document.getElementById("logo");
-// navbar.classList.add("sticky");
-
-// Get the offset position of the navbar
 const sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position.
 function checkSticky() {
   if (window.scrollY >= 50) {
     navbar.classList.add("sticky");
@@ -76,93 +63,14 @@ function checkSticky() {
   }
 }
 
-// Call the function on scroll
 window.onscroll = function() {
   checkSticky();
 };
-
-
-
-
-
-
-// let into = 1;
-// setInterval(changeContent(into++), 5000);
-
-
-
-// function changeSlider {
-//     const dots1 = document.querySelectorAll('.dot');
-//     if(dots1[0].style.backgroundColor === 'black'){
-//         changeContent(2);
-//     } else if(dots1[1].style.backgroundColor === 'black'){
-//         changeContent(3);
-//     } else if(dots1[2].style.backgroundColor === 'black'){
-//         changeContent(1);
-//     }
-// }
-
 
 const currentImageElement = document.getElementById("love-img");
 const nextImageElement = document.getElementById("love-next-img");
 const images = ["images/love-packistani-food.png", "images/love-empanadas.png", "images/love-packistani-food.png"]; 
 let currentIndex = 0;
-
-
-// const currentImageElement = document.getElementById("currentImage");
-// const nextImageElement = document.getElementById("nextImage");
-// const images = ["image1.jpg", "image2.jpg", "image3.jpg"]; 
-// let currentIndex = 0;
-
-// document.getElementById("nextButton").addEventListener("click", function () {
-
-//   const nextIndex = (currentIndex + 1) % images.length;
-  
-
-//   nextImageElement.src = images[nextIndex];
-  
-
-//   nextImageElement.style.transform = "translateX(100%)";
-//   nextImageElement.style.display = "block"; 
-  
-
-//   setTimeout(() => {
-//     currentImageElement.style.transform = "translateX(-100%)"; 
-//     nextImageElement.style.transform = "translateX(0)"; 
-//   }, 10); 
-  
-//   setTimeout(() => {
-//     currentImageElement.src = images[nextIndex]; 
-//     currentImageElement.style.transform = "translateX(0)"; 
-//     nextImageElement.style.display = "none"; 
-//     currentIndex = nextIndex; 
-//   }, 500); 
-// });
-
-
-
-// Set initial state when page loads
-// document.addEventListener('DOMContentLoaded', function() {
-//     changeContent(1); 
-//     console.log("consoling bro");
-// });
-
-
-// let counter = 1;
-
-// function callFunctionWithParam() {
-
-//     counter++;
-//     if(counter === 4) {
-//         counter = 1;
-//     }
-//     changeContent(counter);
-    
-    // Increment counter and reset to 1 if it exceeds 3
-    
-  
-
-//   setInterval(callFunctionWithParam, 5000);
 
 function changeAbout(about) {
     const abouts = document.querySelectorAll('.abouts');
@@ -178,9 +86,6 @@ function aboutDropdown(about) {
     const mission = document.getElementById('mission');
     const vision = document.getElementById('vision');
     const quality = document.getElementById('quality');
-
-
-    // Update text and image based on the selected dot
     switch (about) {
         case 1:
             aboutDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
@@ -215,7 +120,6 @@ function aboutDropdown(about) {
             quality.style.color = '#ed7e2c';
             break;
     }
-    
 }
 
 // Contact us 
@@ -226,40 +130,29 @@ function contactDropdown(contact) {
     const contactInfo = document.getElementById('contact');
     const distributor = document.getElementById('distributor');
     const findUs = document.getElementById('find-us');
-
-
-    // Update text and image based on the selected dot
     switch (contact) {
         case 1:
-            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
+            contactDescription.innerHTML = "<b>Adams Food Catering Company</b></br>Al-Ardiya Industrial Zone, Block 2, Building No.157</p></br><span class='orange'>P. O. Box:</span> 2683 Al-Ardiya, 92400 KUWAIT</br><span class='orange'>Tel:</span> +965-6573-3318 </br>&nbsp &nbsp &nbsp &nbsp &nbsp +965-6593-3318 </br><span class='orange'>Email:</span> info@adamsfood-kuwait.com</br>";
             contactNav.innerHTML = "CONTACT INFO";
             contactInfo.style.color = '#ed7e2c';
             distributor.style.color = 'black';
             findUs.style.color = 'black';
             break;
         case 2:
-            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
-            contactNav.innerHTML = "CONTACT INFO";
-            contactInfo.style.color = '#ed7e2c';
-            distributor.style.color = 'black';
+            contactDescription.innerHTML = "Do you want to be part of a dynamic and growing network? Becoming a distributor for ADAMS FOOD products, offers you the opportunity to grow your business and be part of our success story.</br></br>Why Partner with Us?</br></br><b>High-Quality Products:</b> We offer a range of top-notch products that meet the highest industry standards.</br></br><b>Competitive Pricing:</b> Our pricing strategy ensures you get the best margins.</br></br><b>Marketing Support:</b>Benefit from our comprehensive marketing materials and support to help you succeed.</br></br><b>Dedicated Support:</b> Our team is here to assist you every step of the way. ";
+            contactNav.innerHTML = "BECOME A DISTRIBUTOR";
+            contactInfo.style.color = 'black';
+            distributor.style.color = '#ed7e2c';
             findUs.style.color = 'black';
             break;
         case 3:
             contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
-            contactNav.innerHTML = "CONTACT INFO";
-            contactInfo.style.color = '#ed7e2c';
+            contactNav.innerHTML = "WHERE TO FIND US";
+            contactInfo.style.color = 'black';
             distributor.style.color = 'black';
-            findUs.style.color = 'black';
-            break;
-        case 4:
-            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
-            contactNav.innerHTML = "CONTACT INFO";
-            contactInfo.style.color = '#ed7e2c';
-            distributor.style.color = 'black';
-            findUs.style.color = 'black';
+            findUs.style.color = '#ed7e2c';
             break;
     }
-    
 }
 
 // Love What You Bring 
@@ -267,8 +160,6 @@ function contactDropdown(contact) {
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.slide-img');
 const dots = document.querySelectorAll('.dot');
-
-// Array of slide texts to change content dynamically
 const slideTexts = [
     {
         heading: "LOVE WHAT YOU BRING TO THE TABLE",
@@ -283,88 +174,85 @@ const slideTexts = [
         paragraph: "We ensure that everything we make is nutritious and ready for your family to enjoy together."
     }
 ];
-
-// Function to change slides and apply transitions
 function currentSlide(index) {
-    // Update the slide index
     currentSlideIndex = index;
-
-    // Hide all images and deactivate all dots
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
         dots[i].classList.remove('active');
     });
-
-    // Show the current image and activate the corresponding dot
     slides[currentSlideIndex].classList.add('active');
     dots[currentSlideIndex].classList.add('active');
-
-    // Update the content text dynamically based on the slide index
     const contentHeading = document.querySelector('.content h2');
     const contentParagraph = document.querySelector('.content p');
     contentHeading.textContent = slideTexts[currentSlideIndex].heading;
     contentParagraph.textContent = slideTexts[currentSlideIndex].paragraph;
 }
-
-// Initialize the first slide as active
 currentSlide(0);
-
-// Automatically change slides every 5 seconds
 setInterval(() => {
-    currentSlideIndex = (currentSlideIndex + 1) % slides.length; // Increment slide index and loop back to 0 when reaching the end
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length; 
     currentSlide(currentSlideIndex);
 }, 5000); 
-
-
 function toggleMenu() {
     const menu = document.getElementById("menu-icon");
-
     menu.classList.add("menu-toggle");
-
-
 }
-
 
 // BANNER TOP 
 
-
 function changeIndex(boxNumber) {
     const indexImg = document.getElementById('index-header');
+    const indexImg1 = document.getElementById('index-img1');
+    const indexImg2 = document.getElementById('index-img2');
+    const indexImg3 = document.getElementById('index-img3');
+    const indexh2 = document.getElementById('index-h2');
+    const indexh3 = document.getElementById('index-h3');
     const box1 = document.getElementById('box1');
     const box2 = document.getElementById('box2');
     const box3 = document.getElementById('box3');
-
-
+  indexImg.style.opacity = 0;
+  setTimeout(() => {
     switch (boxNumber) {
         case 1 :
-            indexImg.style.backgroundImage = "url('images/woman-with-food.png')";
+            indexImg1.classList.add('active');
+            indexImg2.classList.remove('active');
+            indexImg3.classList.remove('active');
+            indexh2.innerHTML = 'THE REAL</br>LEBANESE</br>TASTE';
+            indexh3.innerHTML = 'STARTED AS A FAMILY</br>BUSINESS IN 2010';
             box1.src = 'images/box-fill.png';
             box2.src = 'images/box-empty.png';
             box3.src = 'images/box-empty.png';
             currentBox(1);
             break;
         case 2 :
-            indexImg.style.backgroundImage = "url('images/visual3.png')";
+            indexImg1.classList.remove('active');
+            indexImg2.classList.add('active');
+            indexImg3.classList.remove('active');
+            indexh2.innerHTML = 'NEW LOOK</br>SAME GREAT</br>TASTE';
+            indexh3.innerHTML = 'FROZEN GOURMET</br>FINGER FOOD';
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-fill.png';
             box3.src = 'images/box-empty.png';
             currentBox(2);
             break;
         case 3 :
-            indexImg.style.backgroundImage = "url('images/woman-with-food.png')";
+            indexImg1.classList.remove('active');
+            indexImg2.classList.remove('active');
+            indexImg3.classList.add('active');
+            indexh2.innerHTML = 'NEW LOOK</br>SAME GREAT</br>TASTE';
+            indexh3.innerHTML = 'FROZEN GOURMET</br>FINGER FOOD';
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-empty.png';
             box3.src = 'images/box-fill.png';
-            currentBox(3)
+            currentBox(2);
             break;
     }
+    indexImg.style.opacity = 1;
+  }, 100); 
 }
 
 let currentBoxIndex = 0;
 const banner = document.querySelectorAll('.slide-img');
 const boxes = document.querySelectorAll('.dot');
-
-// Array of slide texts to change content dynamically
 const bannerTexts = [
     {
         heading: "LOVE WHAT YOU BRING TO THE TABLE",
@@ -379,36 +267,23 @@ const bannerTexts = [
         paragraph: "We ensure that everything we make is nutritious and ready for your family to enjoy together."
     }
 ];
-
-// Function to change slides and apply transitions
 function currentBox(index) {
-    // Update the slide index
     currentBoxIndex = index;
-
-    // Hide all images and deactivate all dots
     banner.forEach((slide, i) => {
         slide.classList.remove('active');
         boxes[i].classList.remove('active');
     });
-
-    // Show the current image and activate the corresponding dot
     banner[currentBoxIndex].classList.add('active');
     dots[currentBoxIndex].classList.add('active');
-
-    // Update the content text dynamically based on the slide index
     const contentHeading = document.querySelector('.content h2');
     const contentParagraph = document.querySelector('.content p');
     contentHeading.textContent = slideTexts[currentBoxIndex].heading;
     contentParagraph.textContent = slideTexts[currentBoxIndex].paragraph;
 }
-
-// Initialize the first slide as active
 currentBox(0);
 changeIndex(1)
-
-// Automatically change slides every 5 seconds
 setInterval(() => {
     currentBoxIndex = (currentBoxIndex + 1) % banner.length; // Increment slide index and loop back to 0 when reaching the end
     currentBox(currentBoxIndex);
     changeIndex(currentBoxIndex);
-}, 5000); 
+}, 10000); 
