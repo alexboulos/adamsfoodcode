@@ -190,6 +190,7 @@ function currentSlide(index) {
 currentSlide(0);
 setInterval(() => {
     currentSlideIndex = (currentSlideIndex + 1) % slides.length; 
+    console.log(currentSlideIndex);
     currentSlide(currentSlideIndex);
 }, 5000); 
 function toggleMenu() {
@@ -200,7 +201,6 @@ function toggleMenu() {
 // BANNER TOP 
 
 function changeIndex(boxNumber) {
-    const indexImg = document.getElementById('index-header');
     const indexImg1 = document.getElementById('index-img1');
     const indexImg2 = document.getElementById('index-img2');
     const indexImg3 = document.getElementById('index-img3');
@@ -209,14 +209,13 @@ function changeIndex(boxNumber) {
     const box1 = document.getElementById('box1');
     const box2 = document.getElementById('box2');
     const box3 = document.getElementById('box3');
-  indexImg.style.opacity = 0;
   setTimeout(() => {
     switch (boxNumber) {
         case 1 :
             indexImg1.classList.add('active');
             indexImg2.classList.remove('active');
             indexImg3.classList.remove('active');
-            indexh2.innerHTML = 'THE REAL</br>LEBANESE</br>TASTE';
+            indexh2.innerHTML = 'NEW LOOK</br>SAME GREAT</br>TASTE';
             indexh3.innerHTML = 'STARTED AS A FAMILY</br>BUSINESS IN 2010';
             box1.src = 'images/box-fill.png';
             box2.src = 'images/box-empty.png';
@@ -227,7 +226,7 @@ function changeIndex(boxNumber) {
             indexImg1.classList.remove('active');
             indexImg2.classList.add('active');
             indexImg3.classList.remove('active');
-            indexh2.innerHTML = 'NEW LOOK</br>SAME GREAT</br>TASTE';
+            indexh2.innerHTML = 'THE REAL</br>LEBANESE</br>TASTE';
             indexh3.innerHTML = 'FROZEN GOURMET</br>FINGER FOOD';
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-fill.png';
@@ -238,35 +237,20 @@ function changeIndex(boxNumber) {
             indexImg1.classList.remove('active');
             indexImg2.classList.remove('active');
             indexImg3.classList.add('active');
-            indexh2.innerHTML = 'NEW LOOK</br>SAME GREAT</br>TASTE';
-            indexh3.innerHTML = 'FROZEN GOURMET</br>FINGER FOOD';
+            indexh2.innerHTML = 'TASTE THE TRADITION';
+            indexh3.innerHTML = 'DEDICATED TO TRADITION</br>AND RELIABILITY';
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-empty.png';
             box3.src = 'images/box-fill.png';
-            currentBox(2);
+            currentBox(3);
             break;
     }
-    indexImg.style.opacity = 1;
   }, 10); 
 }
 
 let currentBoxIndex = 0;
 const banner = document.querySelectorAll('.slide-img');
 const boxes = document.querySelectorAll('.dot');
-const bannerTexts = [
-    {
-        heading: "LOVE WHAT YOU BRING TO THE TABLE",
-        paragraph: "You'll find all our natural products filled with nutritious goodness and ready for your family to enjoy."
-    },
-    {
-        heading: "FRESH INGREDIENTS",
-        paragraph: "Our products are made from the freshest ingredients sourced directly from local farms."
-    },
-    {
-        heading: "READY FOR YOUR FAMILY",
-        paragraph: "We ensure that everything we make is nutritious and ready for your family to enjoy together."
-    }
-];
 function currentBox(index) {
     currentBoxIndex = index;
     banner.forEach((slide, i) => {
@@ -281,9 +265,27 @@ function currentBox(index) {
     contentParagraph.textContent = slideTexts[currentBoxIndex].paragraph;
 }
 currentBox(0);
-changeIndex(1)
+
 setInterval(() => {
-    currentBoxIndex = (currentBoxIndex + 1) % banner.length; // Increment slide index and loop back to 0 when reaching the end
+    currentBoxIndex = (currentBoxIndex + 1) % (banner.length); 
+    changeIndex(currentBoxIndex);               
     currentBox(currentBoxIndex);
-    changeIndex(currentBoxIndex);
-}, 10000); 
+}, 5000); 
+
+
+// Animate On Scroll
+
+const elements = document.querySelectorAll('.products, .product, .view-all, .madekuwait, .natural, .iso');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('scrolled');
+      observer.unobserve(entry.target); 
+    }
+  });
+});
+
+elements.forEach(element => {
+  observer.observe(element);
+});
