@@ -209,6 +209,8 @@ function changeIndex(boxNumber) {
     const box1 = document.getElementById('box1');
     const box2 = document.getElementById('box2');
     const box3 = document.getElementById('box3');
+    const hero = document.querySelectorAll('hero-text');
+
   setTimeout(() => {
     switch (boxNumber) {
         case 1 :
@@ -267,15 +269,17 @@ function currentBox(index) {
 currentBox(0);
 
 setInterval(() => {
-    currentBoxIndex = (currentBoxIndex + 1) % (banner.length); 
+    currentBoxIndex = (currentBoxIndex + 1) % (banner.length+1); 
+    // hero.classList.remove('slideInLeft');
     changeIndex(currentBoxIndex);               
     currentBox(currentBoxIndex);
-}, 5000); 
+    // hero.classList.add('slideInLeft');
+}, 10000); 
 
 
 // Animate On Scroll
 
-const elements = document.querySelectorAll('.products, .product, .view-all, .madekuwait, .natural, .iso');
+const elements = document.querySelectorAll('.products, .product, .view-all, .madekuwait, .natural, .iso, .instagram, .view-ig');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

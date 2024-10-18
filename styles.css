@@ -30,8 +30,8 @@
     overflow: hidden;
   }
 
-  .index-header img {
-    animation: zoomIn 5s ease-in-out infinite alternate;
+  .index-header .index-background {
+    animation: zoomIn 10.1s ease-in-out infinite;
   }
 
 
@@ -41,7 +41,7 @@
       transform: scale(1);
     }
     100% {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 
@@ -929,7 +929,11 @@ button:hover {
     left: 100px;
     top: 600px;
     transform: translate(0, -50%);
+  }
+
+  .slideInLeft {
     animation: slideInFromLeft 0.8s ease-in-out;
+
   }
 
   @keyframes slideInFromLeft {
@@ -1171,7 +1175,7 @@ button:hover {
     transition:  0.3s ease, transform 0.3s ease;
   }
 
-  .products.scrolled h2, .product.scrolled, .products.scrolled p, .view-all.scrolled {
+  .products.scrolled h2, .product.scrolled, .products.scrolled p, .view-all.scrolled, .instagram.scrolled h2, .instagram.scrolled h3, .view-ig.scrolled  {
     transform: scale(1);
   }
 
@@ -1215,7 +1219,8 @@ button:hover {
   .instagram h2 {
     text-align: center;
     font-size: 60px;
-  
+    transform: scale(0);
+    transition: transform 1s ease-out;
   }
   
   .instagram h3 {
@@ -1224,11 +1229,15 @@ button:hover {
     font-weight: 600;
     margin-bottom: 30px;
     font-size: 30px;
+    transform: scale(0);
+    transition: transform 1s ease-out;
   }
   
   .view-ig {
     display:flex;
     margin-left: 300px;
+    transform: scale(0);
+    transition: transform 1s ease-out;
   }
   
   .view-ig a p {
