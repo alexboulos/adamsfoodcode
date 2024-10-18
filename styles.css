@@ -1599,7 +1599,7 @@ button:hover {
   justify-content: space-between;
   align-items: stretch; 
   aspect-ratio: 16 / 9; 
-  max-height: 80vh; 
+  max-height: 700px; 
   height: auto;
 }
 
