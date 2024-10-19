@@ -1120,7 +1120,7 @@ button:hover {
   }
   
   .madekuwait {
-    transform: translate(0, 20px);
+    /* transform: translate(0, 20px); */
     /* transform: scale(0); */
     animation: slideInFromLeftFeatures 2s ease-in-out;
   }
@@ -1138,10 +1138,10 @@ button:hover {
 
   @keyframes slideInFromLeftFeatures {
     0% {
-      transform: scale(0.2) translate(-300%, 20px);
+      transform: scale(0.2) translate(-300%, 0);
     }
     100% {
-      transform: scale(1) translate(0, 20px);
+      transform: scale(1) translate(0, 0);
     }
   }
 
@@ -1331,7 +1331,7 @@ button:hover {
   
   .view-ig {
     display:flex;
-    margin-left: 300px;
+    justify-content: center;
     transform: scale(0);
     transition: transform 1s ease-out;
   }
@@ -1763,10 +1763,10 @@ button:hover {
   display: flex;
   justify-content: start;
   margin-top: 20px;
-  position: relative; 
-  bottom: -50px; 
+  position: absolute; 
+  bottom: 100px; 
   width: 100%;
-  left: 0px;
+  left: 130px;
 }
 
 .dot {
