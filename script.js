@@ -146,7 +146,7 @@ function contactDropdown(contact) {
             findUs.style.color = 'black';
             break;
         case 3:
-            contactDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
+            contactDescription.innerHTML = "<img class = 'where-to-find-us-img' src='images/where-to-find-us-map.png'> <h2>In Kuwait</h2><p>Our Products Are Available accross The Retail Channel: COOPS and Supermarkets.</p><p class='orange'>For More Info, Kindly Contact Us</p>";
             contactNav.innerHTML = "WHERE TO FIND US";
             contactInfo.style.color = 'black';
             distributor.style.color = 'black';
@@ -209,9 +209,12 @@ function changeIndex(boxNumber) {
     const box1 = document.getElementById('box1');
     const box2 = document.getElementById('box2');
     const box3 = document.getElementById('box3');
-    const hero = document.querySelectorAll('hero-text');
+    const hero = document.getElementById('hero-text');
+
+    hero.classList.remove('slideInLeft');
 
   setTimeout(() => {
+    hero.classList.add('slideInLeft');
     switch (boxNumber) {
         case 1 :
             indexImg1.classList.add('active');
@@ -222,7 +225,7 @@ function changeIndex(boxNumber) {
             box1.src = 'images/box-fill.png';
             box2.src = 'images/box-empty.png';
             box3.src = 'images/box-empty.png';
-            currentBox(1);
+            currentBox(0);
             break;
         case 2 :
             indexImg1.classList.remove('active');
@@ -233,18 +236,18 @@ function changeIndex(boxNumber) {
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-fill.png';
             box3.src = 'images/box-empty.png';
-            currentBox(2);
+            currentBox(1);
             break;
         case 3 :
             indexImg1.classList.remove('active');
             indexImg2.classList.remove('active');
             indexImg3.classList.add('active');
-            indexh2.innerHTML = 'TASTE THE TRADITION';
+            indexh2.innerHTML = 'TASTE THE</br> TRADITION';
             indexh3.innerHTML = 'DEDICATED TO TRADITION</br>AND RELIABILITY';
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-empty.png';
             box3.src = 'images/box-fill.png';
-            currentBox(3);
+            currentBox(2);
             break;
     }
   }, 10); 
@@ -263,18 +266,16 @@ function currentBox(index) {
     dots[currentBoxIndex].classList.add('active');
     const contentHeading = document.querySelector('.content h2');
     const contentParagraph = document.querySelector('.content p');
-    contentHeading.textContent = slideTexts[currentBoxIndex].heading;
-    contentParagraph.textContent = slideTexts[currentBoxIndex].paragraph;
+    // contentHeading.textContent = slideTexts[currentBoxIndex].heading;
+    // contentParagraph.textContent = slideTexts[currentBoxIndex].paragraph;
 }
 currentBox(0);
 
 setInterval(() => {
-    currentBoxIndex = (currentBoxIndex + 1) % (banner.length+1); 
-    // hero.classList.remove('slideInLeft');
-    changeIndex(currentBoxIndex);               
-    currentBox(currentBoxIndex);
-    // hero.classList.add('slideInLeft');
-}, 10000); 
+    currentBoxIndex = (currentBoxIndex + 1) % (banner.length); 
+    changeIndex(currentBoxIndex+1);               
+    // currentBox(currentBoxIndex);
+}, 3000); 
 
 
 // Animate On Scroll

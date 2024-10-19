@@ -26,12 +26,12 @@
     position: relative;
     height: 1000px;
     color: #fff;
-    transition: opacity .5s ease; 
+    transition: opacity 1.5s ease; 
     overflow: hidden;
   }
 
-  .index-header .index-background {
-    animation: zoomIn 10.1s ease-in-out infinite;
+  .index-header .index-background.active {
+    animation: zoomIn 3.1s infinite;
   }
 
 
@@ -39,12 +39,23 @@
   @keyframes zoomIn {
     0% {
       transform: scale(1);
+      /* opacity: 1; */
+    }
+    50% {
+      transform: scale(1.1);
+      /* opacity: 0.5; */
     }
     100% {
-      transform: scale(1.1);
+      transform: scale(1.2);
+      /* opacity: 1; */
     }
+  
   }
 
+  .where-to-find-us-img {
+    width: 50%;
+
+  }
 
   
   .index-background {
@@ -53,7 +64,7 @@
     height: 1000px;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 2s ease; 
+    transition: opacity 1s ease; 
   }
 
  .active {
@@ -580,7 +591,7 @@ a.active {
     top: -200px;
   }
   .contact-section {
-    height: auto;
+    height: 12000px;
   }
   .about-dropdown {
     position: relative;
@@ -695,6 +706,10 @@ margin-right: auto;
   transform: scale(1.4);
   margin-top: 200px;
   margin-left: 30%;
+}
+
+.contact-form-distributor {
+  margin-top: 50px;
 }
 
 .contact-form h2 {
@@ -886,6 +901,13 @@ button:hover {
     text-transform: uppercase;  
     font-size: 18px;
     max-width: 50%;
+    height: 9000px;
+  }
+
+  .contact-description p {
+    margin-bottom: 10px;
+    width: 80%;
+    /* color:#777; */
   }
 
   .orange {
@@ -933,7 +955,6 @@ button:hover {
 
   .slideInLeft {
     animation: slideInFromLeft 0.8s ease-in-out;
-
   }
 
   @keyframes slideInFromLeft {
@@ -1274,8 +1295,8 @@ button:hover {
   
   
   .insta-item {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background-color: #ccc;
     aspect-ratio: 1 / 1;
     width: auto;
