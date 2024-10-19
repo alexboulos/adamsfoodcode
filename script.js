@@ -172,11 +172,11 @@ const dots = document.querySelectorAll('.dot');
 const slideTexts = [
     {
         heading: "LOVE WHAT YOU BRING TO THE TABLE",
-        paragraph: "You'll find all our natural products filled with nutritious goodness and ready for your family to enjoy."
+        paragraph: "You'll find all our natural products filled with nutritious goodness."
     },
     {
         heading: "FRESH INGREDIENTS",
-        paragraph: "Our products are made from the freshest ingredients sourced directly from local farms."
+        paragraph: "Our products are made from the freshest ingredients."
     },
     {
         heading: "READY FOR YOUR FAMILY",
@@ -201,7 +201,7 @@ setInterval(() => {
     currentSlideIndex = (currentSlideIndex + 1) % slides.length; 
     console.log(currentSlideIndex);
     currentSlide(currentSlideIndex);
-}, 5000); 
+}, 1000); 
 function toggleMenu() {
     const menu = document.getElementById("menu-icon");
     menu.classList.add("menu-toggle");
@@ -222,6 +222,7 @@ function changeIndex(boxNumber) {
 
     hero.classList.remove('slideInLeft');
 
+
   setTimeout(() => {
     hero.classList.add('slideInLeft');
     switch (boxNumber) {
@@ -234,7 +235,7 @@ function changeIndex(boxNumber) {
             box1.src = 'images/box-fill.png';
             box2.src = 'images/box-empty.png';
             box3.src = 'images/box-empty.png';
-            currentBox(0);
+            // currentBox(0);
             break;
         case 2 :
             indexImg1.classList.remove('active');
@@ -245,7 +246,7 @@ function changeIndex(boxNumber) {
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-fill.png';
             box3.src = 'images/box-empty.png';
-            currentBox(1);
+            // currentBox(1);
             break;
         case 3 :
             indexImg1.classList.remove('active');
@@ -256,29 +257,11 @@ function changeIndex(boxNumber) {
             box1.src = 'images/box-empty.png';
             box2.src = 'images/box-empty.png';
             box3.src = 'images/box-fill.png';
-            currentBox(2);
+            // currentBox(2);
             break;
     }
   }, 10); 
 }
-
-let currentBoxIndex = 0;
-const banner = document.querySelectorAll('.slide-img');
-const boxes = document.querySelectorAll('.dot');
-function currentBox(index) {
-    currentBoxIndex = index;
-    banner.forEach((slide, i) => {
-        slide.classList.remove('active');
-        boxes[i].classList.remove('active');
-    });
-    banner[currentBoxIndex].classList.add('active');
-    dots[currentBoxIndex].classList.add('active');
-    const contentHeading = document.querySelector('.content h2');
-    const contentParagraph = document.querySelector('.content p');
-    // contentHeading.textContent = slideTexts[currentBoxIndex].heading;
-    // contentParagraph.textContent = slideTexts[currentBoxIndex].paragraph;
-}
-currentBox(0);
 
 setInterval(() => {
     currentBoxIndex = (currentBoxIndex + 1) % (banner.length); 
@@ -303,3 +286,25 @@ const observer = new IntersectionObserver((entries) => {
 elements.forEach(element => {
   observer.observe(element);
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // When the page loads, make sure the body is fully visible
+    document.body.classList.remove("fade-out");
+  
+    // Add event listeners to links
+    document.querySelectorAll(".transition-link").forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const targetUrl = this.href; // Get the URL of the clicked link
+  
+        // Add the fade-out class
+        document.body.classList.add("fade-out");
+  
+        // Wait for the transition to complete before navigating
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 500); // Match this duration with your CSS transition time
+      });
+    });
+  });

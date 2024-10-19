@@ -10,7 +10,6 @@
   }
   
   body {
-  
     font-family: "Montserrat", sans-serif;
     width: 100%;
     line-height: 1.6;
@@ -19,6 +18,13 @@
     overflow-x: hidden;
     position: relative;
     background-color: white;
+    opacity: 1;
+    /* transition: opacity 0.5s ease-in-out; */
+  }
+  
+  /* Class to fade out */
+  .fade-out {
+    opacity: 0;
   }
 
   
@@ -31,7 +37,8 @@
   }
 
   .index-header .index-background.active {
-    animation: zoomIn 3.1s infinite;
+    animation: zoomIn 4.1s ease-in-out infinite;
+  
   }
 
 
@@ -41,12 +48,8 @@
       transform: scale(1);
       /* opacity: 1; */
     }
-    50% {
-      transform: scale(1.1);
-      /* opacity: 0.5; */
-    }
     100% {
-      transform: scale(1.2);
+      transform: scale(1.1);
       /* opacity: 1; */
     }
   
@@ -64,7 +67,7 @@
     height: 1000px;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease; 
+    /* transition: opacity 0.2s ease;  */
   }
 
  .active {
@@ -1122,18 +1125,22 @@ button:hover {
   .madekuwait {
     /* transform: translate(0, 20px); */
     /* transform: scale(0); */
-    animation: slideInFromLeftFeatures 2s ease-in-out;
+    /* transform: scale(0.2) translate(-300%, 0); */
+
+    animation: scaleIn 4s ease-in-out;
   }
 
   .natural { 
     /* transform: scale(0); */
-    animation: slideInFromRightFeatures 2s ease-in-out;
+    /* transform: scale(0.2) translate(300%, 0); */
+
+    animation: scaleIn 4s ease-in-out;
   }
 
   .iso img {
     width: 200px;
     /* transform: scale(0); */
-    animation: scaleIn 2s ease-in-out;
+    animation: scaleIn 4s ease-in-out;
   }
 
   @keyframes slideInFromLeftFeatures {
@@ -1156,7 +1163,7 @@ button:hover {
 
 @keyframes scaleIn {
   0% {
-    transform: scale(0.2);
+    transform: scale(0.8);
   }
   100% {
     transform: scale(1);
@@ -1725,7 +1732,7 @@ button:hover {
 .content h2 {
   line-height: 70px;
   padding-bottom: 10px;
-  font-size: 72px;
+  font-size: 66px;
 
 }
 
@@ -1764,9 +1771,9 @@ button:hover {
   justify-content: start;
   margin-top: 20px;
   position: absolute; 
-  bottom: 100px; 
+  bottom: 70px; 
   width: 100%;
-  left: 130px;
+  left: 135px;
 }
 
 .dot {
