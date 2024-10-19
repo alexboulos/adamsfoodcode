@@ -121,6 +121,17 @@
     color: white;
   }
 
+  .service-header {
+    position: relative;
+    height: 722px;
+    background-image: url("images/service-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+
+  
+
   .products-header {
     position: relative;
     height: 722px;
@@ -159,14 +170,78 @@
     width: 100%;
     font-size: 40px;
     font-weight: 800;
-    line-height: 60px;
+    line-height: 50px;
     text-transform: uppercase;
+    margin-bottom: 50px;
   }
 
   .private-description .orange {
     font-weight: 800;
   }
+
+  /* FAQ Container */
+.faq-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Heading Styles */
+.faq-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* FAQ Item */
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item h2 {
+  font-size: 1.2em;
+  color: #ed7e2c;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
   
+  .service-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .service-box {
+    background-image: url("images/service-box.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service-box p{
+    color: #fff;
+    position: relative;
+    font-size: 26px;
+    line-height: 30px;
+    transform: translateY(20px);
+  }
+
   .menu-icon {
     position: fixed;
     display: flex;
