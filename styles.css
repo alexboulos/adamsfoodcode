@@ -591,7 +591,7 @@ a.active {
     top: -200px;
   }
   .contact-section {
-    height: 12000px;
+    height: auto;
   }
   .about-dropdown {
     position: relative;
@@ -652,8 +652,8 @@ width: 90%;
 position: relative;
 margin-top: 150px;
 bottom: 100px;
-
-display: block;
+/* display: block; */
+display: none;
 margin-left: auto;
 margin-right: auto;
 }
@@ -901,7 +901,7 @@ button:hover {
     text-transform: uppercase;  
     font-size: 18px;
     max-width: 50%;
-    height: 9000px;
+    height: auto;
   }
 
   .contact-description p {

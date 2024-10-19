@@ -130,9 +130,14 @@ function contactDropdown(contact) {
     const contactInfo = document.getElementById('contact');
     const distributor = document.getElementById('distributor');
     const findUs = document.getElementById('find-us');
+    const map = document.getElementById('map');
+    const form = document.getElementById('contact-form-dist');
+
     switch (contact) {
         case 1:
             contactDescription.innerHTML = "<b>Adams Food Catering Company</b></br>Al-Ardiya Industrial Zone, Block 2, Building No.157</p></br><span class='orange'>P. O. Box:</span> 2683 Al-Ardiya, 92400 KUWAIT</br><span class='orange'>Tel:</span> +965-6573-3318 </br>&nbsp &nbsp &nbsp &nbsp &nbsp +965-6593-3318 </br><span class='orange'>Email:</span> info@adamsfood-kuwait.com</br>";
+            map.style.display = 'block';
+            form.style.display = 'none'
             contactNav.innerHTML = "CONTACT INFO";
             contactInfo.style.color = '#ed7e2c';
             distributor.style.color = 'black';
@@ -140,6 +145,8 @@ function contactDropdown(contact) {
             break;
         case 2:
             contactDescription.innerHTML = "Do you want to be part of a dynamic and growing network? Becoming a distributor for ADAMS FOOD products, offers you the opportunity to grow your business and be part of our success story.</br></br>Why Partner with Us?</br></br><b>High-Quality Products:</b> We offer a range of top-notch products that meet the highest industry standards.</br></br><b>Competitive Pricing:</b> Our pricing strategy ensures you get the best margins.</br></br><b>Marketing Support:</b>Benefit from our comprehensive marketing materials and support to help you succeed.</br></br><b>Dedicated Support:</b> Our team is here to assist you every step of the way. ";
+            map.style.display = 'none';
+            form.style.display = 'block';
             contactNav.innerHTML = "BECOME A DISTRIBUTOR";
             contactInfo.style.color = 'black';
             distributor.style.color = '#ed7e2c';
@@ -147,6 +154,8 @@ function contactDropdown(contact) {
             break;
         case 3:
             contactDescription.innerHTML = "<img class = 'where-to-find-us-img' src='images/where-to-find-us-map.png'> <h2>In Kuwait</h2><p>Our Products Are Available accross The Retail Channel: COOPS and Supermarkets.</p><p class='orange'>For More Info, Kindly Contact Us</p>";
+            map.style.display = 'none';
+            form.style.display = 'none'
             contactNav.innerHTML = "WHERE TO FIND US";
             contactInfo.style.color = 'black';
             distributor.style.color = 'black';
