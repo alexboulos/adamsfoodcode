@@ -34,7 +34,7 @@
     color: #fff;
     transition: opacity 1.5s ease; 
     overflow: hidden;
-    width: 2000px;
+    width: auto;
   }
 
   
