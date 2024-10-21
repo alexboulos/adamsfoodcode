@@ -88,7 +88,7 @@ function aboutDropdown(about) {
     const quality = document.getElementById('quality');
     switch (about) {
         case 1:
-            aboutDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are ade with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time—be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
+            aboutDescription.innerHTML = "<b>Adams Food Co. (The Real Lebanese Taste) began as a family venture in 2010.</b><br/><br/>Recognizing a market need, we committed to crafting homemade-style frozen natural appetizers and finger foods. Our products are made with high-quality ingredients, free from chemicals and artificial colorings, ensuring they are perfect for the whole family to enjoy at any time, be it morning, lunch, evening, or as a snack for any event.<br/><br/>At Adams Food, we pride ourselves on using 100% fresh, natural, and high-quality ingredients in our frozen products. These snacks are ideal for both home and school, especially for children to savor and enjoy.<br/><br/>Our dedication to tradition and reliability has established Adams Food as a leader in providing meticulously prepared frozen products, ensuring the highest standards of customer satisfaction.";
             aboutNav.innerHTML = "OUR STORY";
             story.style.color = '#ed7e2c';
             mission.style.color = 'black';
@@ -135,7 +135,7 @@ function contactDropdown(contact) {
 
     switch (contact) {
         case 1:
-            contactDescription.innerHTML = "<b>Adams Food Catering Company</b></br>Al-Ardiya Industrial Zone, Block 2, Building No.157</p></br><span class='orange'>P. O. Box:</span> 2683 Al-Ardiya, 92400 KUWAIT</br><span class='orange'>Tel:</span> +965-6573-3318 </br>&nbsp &nbsp &nbsp &nbsp &nbsp +965-6593-3318 </br><span class='orange'>Email:</span> info@adamsfood-kuwait.com</br>";
+            contactDescription.innerHTML = "<b>Adams Food Catering Company</b></br>Al-Ardiya Industrial Zone, Block 2, Building No.157</p></br><span class='orange'>P. O. Box:</span> 2683 Al-Ardiya, 92400 KUWAIT</br><span class='orange'>Tel:</span> +965-6573-3318 </br>&nbsp &nbsp &nbsp &nbsp &nbsp +965-6593-3318 </br><span class='orange'>Email:</span> <a class=' href='mailto:info@adamsfood-kuwait.com' target='_blank'>info@adamsfood-kuwait.com</a></br>";
             map.style.display = 'block';
             form.style.display = 'none'
             contactNav.innerHTML = "CONTACT INFO";
@@ -262,9 +262,9 @@ function changeIndex(boxNumber) {
     }
   }, 10); 
 }
-
+let currentBoxIndex = 0;
 setInterval(() => {
-    currentBoxIndex = (currentBoxIndex + 1) % (banner.length); 
+    currentBoxIndex = (currentBoxIndex +1 ) % (3); 
     changeIndex(currentBoxIndex+1);               
     // currentBox(currentBoxIndex);
 }, 3000); 
@@ -308,3 +308,5 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+

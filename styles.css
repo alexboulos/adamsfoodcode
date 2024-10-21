@@ -34,7 +34,12 @@
     color: #fff;
     transition: opacity 1.5s ease; 
     overflow: hidden;
+    width: 2000px;
   }
+
+  
+
+
 
   .index-header .index-background.active {
     animation: zoomIn 4.1s ease-in-out infinite;
@@ -56,16 +61,17 @@
   }
 
   .where-to-find-us-img {
-    width: 50%;
+    width: 70%;
+    transform: translateX(-30px);
 
   }
 
   
   .index-background {
     position: absolute;
-    width: 100%;
+    width: 2000px;
     height: 1000px;
-    object-fit: cover;
+    object-fit:cover;
     opacity: 0;
     /* transition: opacity 0.2s ease;  */
   }
@@ -127,7 +133,7 @@
   .service-header {
     position: relative;
     height: 722px;
-    background-image: url("images/service-bg.jpg");
+    background-image: url("images/horeca-catering.jpg");
     background-size: cover;
     background-position: center;
     color: white;
@@ -138,7 +144,7 @@
   .products-header {
     position: relative;
     height: 722px;
-    background-image: url("images/products-bg.png");
+    background-image: url("images/product-banner.jpg");
     background-size: cover;
     background-position: center;
     background-repeat:repeat;
@@ -156,14 +162,29 @@
 
   .private-label {
     background-image: url("images/about-section-background.png");
+  }
 
+  .contact-description {
+    margin-top: 20px;
+    margin-left: 40%;
+    margin-right: 100px;
+    text-transform: uppercase;  
+    font-size: 18px;
+    max-width: 50%;
+    height: auto;
+  }
+
+  .contact-description p {
+    margin-bottom: 10px;
+    width: 80%;
+    /* color:#777; */
   }
 
   .private-description {
-    margin-top: 100px;
+    margin-top: 20px;
     margin-bottom: 50px;
     position: relative;
-    width: 90%;
+    width: 80%;
     left: 5%;
     padding-left: 100px;
     padding-right: 100px;
@@ -171,17 +192,64 @@
   .private-description p {
     text-align: center;
     width: 100%;
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
     text-transform: uppercase;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .private-description a {
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
   }
 
   .private-description .orange {
     font-weight: 800;
   }
 
+  .private-description .ready {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ed7e2c;
+    margin-bottom: 15px;
+    margin-top: 55px;
+  }
+
+  .service-description {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    position: relative;
+    /* width: 80%; */
+    /* left: 5%; */
+    /* padding-left: 100px; */
+    /* padding-right: 100px; */
+    margin-top: 50px;
+
+  }
+  .service-description p {
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .service-description a {
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .service-description .orange {
+    font-weight: 800;
+    font-size: 36px;
+  }
   /* FAQ Container */
 .faq-container {
   max-width: 800px;
@@ -221,7 +289,8 @@
   
   .service-boxes {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
     flex-wrap: wrap;
   }
 
@@ -242,7 +311,7 @@
     position: relative;
     font-size: 26px;
     line-height: 30px;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 
   .menu-icon {
@@ -337,7 +406,7 @@
     animation: slideInFromTop 0.5s ease-in-out; /* Animate it */
   }
   .logo img {
-    width: 250px;
+    width: 17vw;
   }
   
   .nav-container {
@@ -670,6 +739,8 @@ a.active {
   }
   .contact-section {
     height: auto;
+    background-image: url("images/about-section-background.png");
+
   }
   .about-dropdown {
     position: relative;
@@ -712,7 +783,8 @@ a.active {
   .contact-dropdown {
     position: relative;
 
-    background-image: url("images/contact-dropdown2.png");
+    background-image: url("images/about-dropdown-big.png");
+
     background-size: cover;
     background-repeat: no-repeat;
     width: 275px;
@@ -751,6 +823,11 @@ margin-right: auto;
   margin-left: 170px;
   margin-top: 70px;
   position: relative;
+}
+
+.media-section {
+  background-image: url("images/about-section-background.png");
+  background-size: cover;
 }
 
 .media-nav p {
@@ -988,12 +1065,23 @@ button:hover {
     /* color:#777; */
   }
 
+  .contact-description a {
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+  }
+
   .orange {
     color: #ed7e2c;
     font-weight: bold;
   }
   
   
+  .offer {
+    font-size: 26px;
+    font-weight: 800;
+    padding-bottom: 500px;
+  }
   
   .sidebar {
     display: flex;
@@ -1049,20 +1137,20 @@ button:hover {
   
   .hero-text h1 {
     line-height: 1;
-    font-size: 30px;
+    font-size: 2.5vw;
     margin-bottom: 20px;
     color: black;
   }
   
   .hero-text h2 {
-    font-size: 60px;
+    font-size: 4vw;
     line-height: 1;
     margin-bottom: 20px;
   }
   
   .hero-text h3 {
     line-height: 1;
-    font-size: 30px;
+    font-size: 2.5vw;
     margin-bottom: 50px;
   }
 
@@ -1101,7 +1189,7 @@ button:hover {
     color: #fff;
     text-decoration: none;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: bold;
     width: fit-content;
     margin-top: 20px;
@@ -1113,7 +1201,7 @@ button:hover {
     display: flex;
     justify-content: space-around;
     padding: 100px;
-    background-color: #fff;
+    /* background-color: #fff; */
     flex-wrap: wrap;
   }
   
@@ -1138,7 +1226,7 @@ button:hover {
   }
 
   .iso img {
-    width: 200px;
+    /* width: 200px; */
     /* transform: scale(0); */
     animation: scaleIn 4s ease-in-out;
   }
@@ -1234,15 +1322,25 @@ button:hover {
     justify-content: space-around;
     width: 100%;
     flex-wrap: wrap;
+    position: relative;
   }
 
   .product-page {
     margin-top: 100px;
     display: flex;
+    /* display: grid; */
     justify-content: space-around;
     width: 100%;
     flex-wrap: wrap;
     z-index: 2;
+  }
+
+  .product-row {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   
   .product {
@@ -1255,6 +1353,9 @@ button:hover {
     transition:  0.3s ease, transform 0.3s ease;
     z-index: 1;
     /* animation: scaleIn 0.8s ease-in-out; */
+    text-transform: uppercase;
+    line-height: 20px;
+
   }
 
   .product-list .product {
@@ -1266,8 +1367,9 @@ button:hover {
     position: relative;
     left: -20px;
     z-index: 5;
-    padding-bottom: 40px;
+    padding-bottom: 42px;
     transition:  0.6s ease, transform 0.3s ease;
+    margin-top: 20px;
 
   }
   
@@ -1312,8 +1414,45 @@ button:hover {
   
   .product:hover h3 {
     visibility: visible;
+    /* position: absolute; */
   }
   
+
+  /* POPUP */
+
+
+  /* The popup (modal) */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+}
+
+/* Popup content */
+.popup-content {
+  display: block;
+  margin: auto;
+  max-width: 60%;
+  max-height: 80%;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
   /* Instagram Section */
   .instagram {
     text-align: center;
@@ -1321,7 +1460,7 @@ button:hover {
   
   .instagram h2 {
     text-align: center;
-    font-size: 60px;
+    font-size: 4vw;
     transform: scale(0);
     transition: transform 1s ease-out;
   }
@@ -1331,7 +1470,7 @@ button:hover {
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
-    font-size: 30px;
+    font-size: 2vw;
     transform: scale(0);
     transition: transform 1s ease-out;
   }
@@ -1344,7 +1483,7 @@ button:hover {
   }
   
   .view-ig a p {
-    font-size: 24px;
+    font-size: 1.5vw;
     padding-top: 15px;
     font-weight: 600;
     padding-left: 20px;
@@ -1352,6 +1491,7 @@ button:hover {
 
   .view-ig img {
     padding-top: 0;
+    width: 4vw;
   }
   
 
@@ -1363,7 +1503,7 @@ button:hover {
 
   .load-more {
     width: 200px;
-    margin: 50px 45vw;
+    /* margin: 50px 45vw; */
   }
 
   
@@ -1377,8 +1517,8 @@ button:hover {
   
   
   .insta-item {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     background-color: #ccc;
     aspect-ratio: 1 / 1;
     width: auto;
@@ -1434,7 +1574,7 @@ button:hover {
   .boxes {
     position: absolute;
     right: 100px;
-    top: 870px;
+    top: 800px;
     z-index: 15;
     display: flex;
     justify-content: space-between;
@@ -1574,7 +1714,7 @@ button:hover {
   .footer-bottom {
     text-align: center;
     margin: auto;
-    width: 50%;
+    width: 100%;
   }
   
   .footer-bottom p {
@@ -1586,6 +1726,10 @@ button:hover {
     text-align: center;
     margin-bottom: 30px;
     margin-top: 100px;
+  }
+
+  .footer-logo img {
+    width: 20%;
   }
   
   .footer-content {
@@ -1740,7 +1884,7 @@ button:hover {
   color: black; /* Make the paragraph text black */
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 2vw;
 
 }
 
@@ -1893,7 +2037,7 @@ button:hover {
 }
 
 .content p {
-    font-size: 20px; 
+    font-size: 2vw; 
 }
   
   }
@@ -1906,7 +2050,7 @@ button:hover {
   }
 
   .content p {
-      font-size: 20px; 
+      font-size: 2vw;
   }
 
 
@@ -2103,6 +2247,144 @@ button:hover {
 
   @media only screen and (max-width: 1200px) {
 
+
+    .dots {
+  
+      display: flex;
+      justify-content: start;
+      margin-top: 20px;
+      position: absolute; 
+      bottom: 100px; 
+      width: 100%;
+      left: 15px;
+    }
+
+    .footer-section p {
+      margin: 0;
+      font-size: 16px;
+      white-space: nowrap;
+      transform: translateX(-20px);
+      transform: translateY(5px);
+    }
+
+    .footer-logo img {
+      width: 30%;
+    }
+
+
+    .instagram-grid {
+      margin: 0 0px;
+    }
+
+    .insta-item{
+      width: 300px;
+      height: 300px;
+    }
+
+    .about-us {
+      padding-bottom: 20px;
+    }
+  
+
+  .instagram h2 {
+    text-align: center;
+    font-size: 5vw;
+    transform: scale(0);
+    transition: transform 1s ease-out;
+  }
+  
+  .instagram h3 {
+    color: #ed7e2c;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 3vw;
+    transform: scale(0);
+    transition: transform 1s ease-out;
+  }
+  
+  .view-ig a p {
+    font-size: 1.1vw;
+    padding-top: 2vw;
+    font-weight: 600;
+    padding-left: 3vw;
+    transform: scale(1.5);
+  }
+  .view-ig img {
+    padding-top: 1vw;
+    width: 4.5vw;
+  }
+
+
+    .prodcuts {
+      /* padding-bottom: 0px; */
+    }
+
+    .products h2 {
+      font-size: 40px;
+      margin-bottom: 0px;
+      color: #ed7e2c;
+      transform: scale(0);
+    }
+
+    .product {
+      width: 200px;
+    }
+
+    .product img {
+      width: 200px;
+    }
+
+    .products p {
+      font-size: 16px;
+    }
+
+
+    .product:hover img {
+      width: 220px;
+      left: -30px;
+      padding-bottom: 21px;
+      transition:  0.6s ease, transform 0.3s ease;
+    }
+
+    .feature img {
+      width: 200px;
+      margin: 20px;
+    }
+
+    .iso img {
+      /* width: 150px; */
+      /* transform: scale(0); */
+      animation: scaleIn 4s ease-in-out;
+    }
+
+    .logo img {
+      width: 20vw;
+    }
+
+    .hero-text {
+      top: 500px;
+    }
+
+    .hero-text h1 {
+      line-height: 1;
+      font-size: 4vw;
+      margin-bottom: 20px;
+      color: black;
+    }
+    
+    .hero-text h2 {
+      font-size: 6vw;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    
+    .hero-text h3 {
+      line-height: 1;
+      font-size: 4vw;
+      margin-bottom: 50px;
+    }
+
     .content { 
       padding: 20px;
       padding-top: 30px;
@@ -2114,7 +2396,7 @@ button:hover {
   }
 
   .content p {
-      font-size: 15px; 
+      font-size: 2vw;
   }
 
 
@@ -2125,7 +2407,7 @@ button:hover {
       margin: auto;
       padding-top: 10px;
       padding-bottom: 30px;
-      margin-bottom: 30px;
+      /* margin-bottom: 30px; */
       display: flex;
       justify-content: space-between;
       gap: 10px;
@@ -2326,7 +2608,73 @@ button:hover {
   }
 
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
+
+    .dots {
+  
+      display: flex;
+      justify-content: start;
+      margin-top: 20px;
+      position: absolute; 
+      bottom: 50px; 
+      width: 100%;
+      left: 45px;
+    }
+
+
+    .footer-logo img {
+      width: 40%;
+    }
+
+
+    .view-ig a p {
+      font-size: 2vw;
+      padding-top: 2vw;
+      font-weight: 600;
+      padding-left: 6vw;
+      transform: scale(1.5);
+    }
+    .view-ig img {
+      padding-top: 0;
+      width: 8vw;
+    }
+
+      .insta-item{
+      width: 200px;
+      height: 200px;
+    }
+   
+    .btn {
+      font-size: 3vw;
+
+    }
+
+    .hero-text {
+      top: 500px;
+    }
+
+    .hero-text h1 {
+      line-height: 1;
+      font-size: 5vw;
+      margin-bottom: 20px;
+      color: black;
+    }
+    
+    .hero-text h2 {
+      font-size: 8vw;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    
+    .hero-text h3 {
+      line-height: 1;
+      font-size: 5vw;
+      margin-bottom: 50px;
+    }
+
+    .logo img {
+      width: 35vw;
+    }
 
   .content {
     padding: 50px;
@@ -2338,7 +2686,7 @@ button:hover {
   }
 
   .content p {
-      font-size: 14px; 
+      font-size: 2vw;
   }
 
 
