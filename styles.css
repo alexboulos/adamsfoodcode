@@ -30,7 +30,7 @@
   
   #index-header {
     position: relative;
-    height: 1000px;
+    height: 100vh;
     color: #fff;
     transition: opacity 1.5s ease; 
     overflow: hidden;
@@ -69,8 +69,8 @@
   
   .index-background {
     position: absolute;
-    width: 2000px;
-    height: 1000px;
+    width: 100%;
+    height: 100vh;
     object-fit:cover;
     opacity: 0;
     /* transition: opacity 0.2s ease;  */
@@ -1460,7 +1460,7 @@ button:hover {
   
   .instagram h2 {
     text-align: center;
-    font-size: 4vw;
+    font-size: 3vw;
     transform: scale(0);
     transition: transform 1s ease-out;
   }
@@ -1470,7 +1470,7 @@ button:hover {
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
-    font-size: 2vw;
+    font-size: 1.5vw;
     transform: scale(0);
     transition: transform 1s ease-out;
   }
@@ -1483,7 +1483,7 @@ button:hover {
   }
   
   .view-ig a p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     padding-top: 15px;
     font-weight: 600;
     padding-left: 20px;
@@ -1491,7 +1491,7 @@ button:hover {
 
   .view-ig img {
     padding-top: 0;
-    width: 4vw;
+    width: 3vw;
   }
   
 
@@ -2258,6 +2258,9 @@ button:hover {
 
   @media only screen and (max-width: 1200px) {
 
+    .hero-text{
+
+    }
 
     .dots {
   
@@ -2621,6 +2624,22 @@ button:hover {
 
   @media (max-width: 800px) {
 
+
+    .index-header .index-background.active {
+      animation: none;
+    
+    }
+
+    #index-img1 {
+      /* src: url("images/woman-mobile.png"); */
+      content: url("images/woman-mobile.png");
+    }
+
+    #index-img2 {
+      content: url("images/visual2-mobile.png");
+    }
+
+
     .dots {
   
       display: flex;
@@ -2657,14 +2676,16 @@ button:hover {
    
     .btn {
       font-size: 3vw;
-
+      display: none;
     }
 
     .hero-text {
-      top: 500px;
+      top: 300px;
+      left: 30%;
     }
 
     .hero-text h1 {
+      display: none;
       line-height: 1;
       font-size: 5vw;
       margin-bottom: 20px;
@@ -2672,19 +2693,25 @@ button:hover {
     }
     
     .hero-text h2 {
-      font-size: 8vw;
+      font-size: 5vw;
       line-height: 1;
       margin-bottom: 20px;
+      content: ;
     }
     
+
     .hero-text h3 {
       line-height: 1;
-      font-size: 5vw;
+      font-size: 3vw;
       margin-bottom: 50px;
     }
 
     .logo img {
-      width: 35vw;
+      width: 30vw;
+    }
+
+    .logo {
+      left: 20px;
     }
 
   .content {
