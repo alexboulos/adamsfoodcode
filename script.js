@@ -205,7 +205,11 @@ setInterval(() => {
 function toggleMenu() {
     const menu = document.getElementById("menu-icon");
     menu.classList.add("menu-toggle");
+    console.log("menu print");
 }
+
+
+
 
 // BANNER TOP 
 
