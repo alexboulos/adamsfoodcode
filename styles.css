@@ -314,31 +314,115 @@
     transform: translateY(10px);
   }
 
-  .menu-icon {
+  /* .menu-icon {
     position: fixed;
     display: flex;
     flex-direction: column;
-    /* cursor: pointer; */
-    /* width: 100px; */
-    /* height: 1000px; */
     right: 15%;
     top: 0px;
     transform: translateY(30px);
     z-index: 999;
     animation: slideInFromTop 0.8s ease-in-out; 
-  }
+  } */
 
 
 
-  .menu-icon img {
+  /* .menu-icon img {
     cursor: pointer;
-  }
+  } */
 
- 
+  
+  
+  .hamburger {
+    position: fixed;
+    top: 50px;
+    right: 100px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2222;
+}
 
-  .menu-toggle {
+.hamburger div {
+    background-color: white;
+    height: 8px;
+    border-radius: 1px;
+}
 
-  }
+/* Popup menu style */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #1d1d1b;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: 0.3s ease;
+    z-index: 2222;
+}
+
+.menu.active {
+    right: 0;
+}
+
+.menu-item a, .submenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 5px 0;
+    font-family: "Montserrat";
+    display: block;
+    padding: 5px 10px; /* Adjusted padding for full width */
+    margin-top: 15px;
+    background-image: url(images/nav-lines.png);
+    background-size: cover; /* Ensures background covers the full width */
+    background-position: center right;
+    background-repeat: repeat;
+    justify-content: space-between;
+}
+
+/* Hover effect on menu items */
+.menu-item a:hover, .submenu a:hover {
+    color: #f47920; /* Hover color */
+}
+
+.menu .close-btn {
+    font-size: 28px; /* Bigger size */
+    text-align: right;
+    cursor: pointer;
+    color: #fff;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.menu-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px; /* Reduced space between title and arrow */
+}
+
+.menu-item .arrows {
+    font-size: 18px; /* Bigger arrows */
+    color: #fff; /* White color for the arrows */
+    margin-left: 5px; /* Reduced margin to bring the arrow closer */
+    margin-top:10px;
+}
+
+
+
   
   .sticky  {
     transform: translateY(-40px); 
@@ -359,13 +443,9 @@
     -webkit-transform: rotate(45deg);
   }
   
-  .hidden {
-    transform: translateY(-100%);
-    transition: all 0.7s ease;
-  }
 
   #rect {
-    height: 160px;
+    height: 100px;
     background-color: #1d1d1b;
   }
 
@@ -395,7 +475,7 @@
 
   .rectangle {
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     top: 0px;
     transition: all 0.3s ease;
     visibility: visible;
@@ -406,8 +486,8 @@
     background-image: url("images/adams-food-logo-white.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     position: absolute;
     left: 100px;
@@ -432,7 +512,7 @@
     align-items:center;
     padding-left: 50px;
     position: fixed;
-    z-index: 1000;
+    z-index: 3000;
     width: 1750px;
     margin: auto;
     left: 300px;
@@ -450,6 +530,8 @@
     background-image: url("images/nav-lines.png");
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: 3000;
+
     
   }
   
@@ -1212,6 +1294,11 @@ button:hover {
     margin-top: 20px;
   }
   
+
+  .hidden {
+    transform: translateY(-100%);
+    transition: all 0.7s ease;
+  }
   
   /* Features Section */
   .features {
@@ -1596,13 +1683,12 @@ button:hover {
   .boxes {
     position: absolute;
     right: 10vh;
-    top: 80vh;
+    top: 90vh;
     z-index: 15;
     display: flex;
     justify-content: space-between;
     gap: 30px;
     animation: slideInFromRightFeatures 0.8s ease-in-out;
-
   }
   
   .box {
@@ -1870,7 +1956,7 @@ button:hover {
   justify-content: space-between;
   align-items: stretch; 
   aspect-ratio: 16 / 9; 
-  /* max-height: 500px;  */
+  max-height: 80vh; 
   height: auto;
 }
 
@@ -1999,7 +2085,7 @@ button:hover {
   
 
     .sticky  {
-      transform: translateY(-30px); 
+      transform: translateY(-60px); 
     }
   
     #nav-bar li {
@@ -2282,13 +2368,21 @@ button:hover {
 
   @media only screen and (max-width: 1200px) {
 
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+    }
+/* 
     .menu-icon1 {
       position: fixed;
       top: 50px;
       cursor: pointer;
       right: 15%;
       z-index: 9999;
-    }
+    } */
 
     .footer-icons {
       margin-bottom: 30px;
@@ -2697,7 +2791,30 @@ button:hover {
   }
 
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+
+
+    .boxes {
+      position: absolute;
+      right: 40%;
+      top: 90vh;
+      z-index: 15;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      animation: slideInFromRightFeatures 0.8s ease-in-out;
+    }
+    
+    .box {
+      width: 10px;
+      height: 1vh;
+      z-index: 15;
+      cursor: pointer;
+    }
+
+    .box img {
+      height: 30px;
+    }
 
     .service-header {
       position: relative;
@@ -2761,11 +2878,15 @@ button:hover {
 
     #index-img1 {
       /* src: url("images/woman-mobile.png"); */
-      content: url("images/woman-mobile.png");
+      content: url("images/visual1-mobile.jpg");
     }
 
     #index-img2 {
-      content: url("images/visual2-mobile.png");
+      content: url("images/visual2-mobile.jpg");
+    }
+
+    #index-img3 {
+      content: url("images/visual3-mobile.jpg");
     }
 
 
@@ -2810,8 +2931,8 @@ button:hover {
     }
 
     .hero-text {
-      top: 300px;
-      left: 30%;
+      top: 250px;
+      left: 35%;
     }
 
     .hero-text h1 {

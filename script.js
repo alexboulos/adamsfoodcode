@@ -25,13 +25,45 @@ document.addEventListener('scroll', function() {
     const footerPosition = footer.getBoundingClientRect().top;
     const screenHeight = window.innerHeight;
     if (footerPosition < screenHeight) {
-        navbar.classList.add('hidden');
+        navbar.style.display = 'none';
         rect.classList.add('hidden');
     } else {
-        navbar.classList.remove('hidden');
+        navbar.style.display = 'block';
         rect.classList.remove('hidden');
     }
 });
+
+
+const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // const aboutItem = document.getElementById('aboutItem');
+        // const aboutSubmenu = document.getElementById('aboutSubmenu');
+        // const servicesItem = document.getElementById('servicesItem');
+        // const servicesSubmenu = document.getElementById('servicesSubmenu');
+        // const contactUsItem = document.getElementById('contactUsItem');
+        // const contactSubmenu = document.getElementById('contactSubmenu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
+
+        aboutItem.addEventListener('click', () => {
+            aboutSubmenu.style.display = aboutSubmenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        productsItem.addEventListener('click', () => {
+            productSubmenu.style.display = productSubmenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        contactUsItem.addEventListener('click', () => {
+            contactSubmenu.style.display = contactSubmenu.style.display === 'flex' ? 'none' : 'flex';
+        });
 
 
 function menuAbout(about) {
@@ -201,12 +233,12 @@ setInterval(() => {
     currentSlideIndex = (currentSlideIndex + 1) % slides.length; 
     console.log(currentSlideIndex);
     currentSlide(currentSlideIndex);
-}, 1000); 
-function toggleMenu() {
-    const menu = document.getElementById("menu-icon");
-    menu.classList.add("menu-toggle");
-    console.log("menu print");
-}
+}, 3000); 
+// function toggleMenu() {
+//     const menu = document.getElementById("menu-icon");
+//     menu.classList.add("menu-toggle");
+//     console.log("menu print");
+// }
 
 
 
