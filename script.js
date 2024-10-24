@@ -28,7 +28,7 @@ document.addEventListener('scroll', function() {
         navbar.style.display = 'none';
         rect.classList.add('hidden');
     } else {
-        navbar.style.display = 'block';
+        navbar.style.display = 'flex';
         rect.classList.remove('hidden');
     }
 });
